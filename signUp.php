@@ -4,6 +4,7 @@
 <head>
     <title>Sign Up | Charitables</title>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -34,7 +35,7 @@
                     <a class="nav-link" href="#">Donate</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="login.php">Login</a>
                 </li>
             </ul>
         </div>
@@ -81,12 +82,12 @@
                         <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="XXX-XXX-XXX">
                     </div>
                     <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
-                    </div>
-                    <div class="form-group">
                         <label for="contact">Contact Number</label>
                         <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">

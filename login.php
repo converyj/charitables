@@ -4,6 +4,7 @@
 <head>
       <title>Log In | Charitables</title>
       <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
       <link href="css/normalize.css" rel="stylesheet">
       <link href="css/style.css" rel="stylesheet">
@@ -35,7 +36,7 @@
                               <a class="nav-link" href="#">Donate</a>
                         </li>
                         <li class="nav-item">
-                              <a class="nav-link" href="#">Logout</a>
+                              <a class="nav-link" href="signUp.php">Sign Up</a>
                         </li>
                   </ul>
             </div>
