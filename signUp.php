@@ -45,7 +45,7 @@
                 <h1 class="text-center">Sign Up</h1>
                 <h5 class="text-center">Every Little Help Counts</h5>
             </header>
-            <form action="" method="POST">
+            <form action="signUp-processing.php" method="POST">
                 <div class="form-row mt-4 pl-4">
                     <div class="form-group col-md-12 custom-contol custom-radio">
                         <input type="radio" class="custom-control-input form-control-lg" id="donor" name="rdbRole" checked>
