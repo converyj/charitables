@@ -22,7 +22,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="#">Dashboard</a>
                 </li>
                 <li class="nav-item">
@@ -105,7 +105,7 @@
                         <div class="form-group col-md-4">
                             <label for="prov">Province</label>
                             <select id="prov" name="province" class="form-control">
-                                <option selected>Choose...</option>
+                                <option selected>Choose ...</option>
                                 <option>Alberta</option>
                                 <option>British Columbia</option>
                                 <option>New Brunswick</option>
