@@ -46,7 +46,7 @@
                   <header>
                         <h1 class="text-center">Login In</h1>
                   </header>
-                  <form action="" method="POST">
+                  <form action="process-login.php" method="POST">
                         <div class="form-group">
                               <label for="email">Email</label>
                               <input type="email" name="email" class="form-control" autofocus="autofocus" id="email"
