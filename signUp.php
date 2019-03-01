@@ -48,24 +48,27 @@
             </header>
             <form action="signUp-processing.php" method="POST">
                 <div class="form-row mt-4 pl-4">
-                    <div class="form-group col-md-12 custom-contol custom-radio">
-                        <input type="radio" class="custom-control-input form-control-lg" id="donor" name="rdbRole" checked>
-                        <label class="custom-control-label" for="donor">Donor</label>
-                    </div>
-                    <div class="form-group custom-contol custom-radio">
-                        <input type="radio" class="custom-control-input" id="recipient" name="rdbRole">
-                        <label class="custom-control-label" for="recipient">Recipient</label>
-                    </div>
+                    <fieldset class="form-group border p-2">
+                        <legend class="w-auto">Role</legend>
+                        <div class="form-check col-md-12 custom-contol custom-radio">
+                            <input type="radio" class="form-check-input custom-control-input form-control-lg" id="donor" name="rdbRole" checked>
+                            <label class="form-check-label custom-control-label" for="donor">Donor</label>
+                        </div>
+                        <div class="form-check custom-contol custom-radio">
+                            <input type="radio" class="form-check-input custom-control-input" id="recipient" name="rdbRole">
+                            <label class="form-check-label custom-control-label" for="recipient">Recipient</label>
+                        </div>
+                    </fieldset>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email">
+                        <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="passwd">Password</label>
                         <div class="input-group mb-3">
-                            <input type="text" name="password" id="passwd" class="form-control" placeholder="Enter Password">
+                            <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password">
                             <div class="input-group-prepend">
                                 <button class="btn btn-outline-secondary" type="button" id="showPassword"><i class="far fa-eye-slash"></i></button>
                             </div>
