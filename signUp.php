@@ -41,7 +41,7 @@
         </div>
     </nav>
     <main>
-        <section class="container">
+        <section class="container" id="app">
             <header>
                 <h1 class="text-center">Sign Up</h1>
                 <h5 class="text-center">Every Little Help Counts</h5>
@@ -68,9 +68,9 @@
                     <div class="form-group col-md-6">
                         <label for="passwd">Password</label>
                         <div class="input-group mb-3">
-                            <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password">
+                            <input :type="type" name="password" id="passwd" class="form-control" placeholder="Enter Password">
                             <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="button" id="showPassword"><i class="far fa-eye-slash"></i></button>
+                                <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i class="far fa-eye-slash"></i></button>
                             </div>
                         </div>
                     </div>
@@ -141,6 +141,24 @@
             </div>
         </footer>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                type: 'password'
+            },
+            methods: {
+                showPassword() {
+                    if (this.type === 'password') {
+                        this.type = 'text'
+                    } else {
+                        this.type = 'password'
+                    }
+                }
+            }
+        })
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
