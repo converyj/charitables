@@ -47,7 +47,7 @@
                 <h5 class="text-center">Every Little Help Counts</h5>
             </header>
             <form action="signUp-processing.php" method="POST">
-                <div class="form-row mt-4 pl-4">
+                <div class="form-row mt-4">
                     <fieldset class="form-group border p-2">
                         <legend class="w-auto">Role</legend>
                         <div class="form-check col-md-12 custom-contol custom-radio">
@@ -70,7 +70,7 @@
                         <div class="input-group mb-3">
                             <input :type="type" name="password" id="passwd" class="form-control" placeholder="Enter Password">
                             <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i class="far fa-eye-slash"></i></button>
+                                <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i v-bind:class="show"></i></button>
                             </div>
                         </div>
                     </div>
@@ -146,14 +146,17 @@
         var app = new Vue({
             el: '#app',
             data: {
-                type: 'password'
+                type: 'password',
+                show: 'far fa-eye-slash'
             },
             methods: {
                 showPassword() {
                     if (this.type === 'password') {
                         this.type = 'text'
+                        this.show = 'far fa-eye'
                     } else {
                         this.type = 'password'
+                        this.show = 'far fa-eye-slash'
                     }
                 }
             }
