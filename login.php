@@ -42,7 +42,7 @@
             </div>
       </nav>
       <main>
-            <section class="container">
+            <section class="container" id="app">
                   <header>
                         <h1 class="text-center">Login In</h1>
                   </header>
@@ -55,18 +55,16 @@
                         <div class="form-group">
                               <label for="passwd">Password</label>
                               <div class="input-group mb-3">
-                                    <input type="text" name="password" id="passwd" class="form-control"
-                                          placeholder="Enter Password">
+                                    <input :type="type" name="password" id="passwd" class="form-control" placeholder="Enter Password">
                                     <div class="input-group-prepend">
-                                          <button class="btn btn-outline-secondary" type="button" id="showPassword"><i
-                                                      class="far fa-eye-slash"></i></button>
+                                          <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i v-bind:class="show"></i></button>
                                     </div>
                               </div>
 
                               <a class="float-right" href="#">Forgot Password</a>
                         </div>
                         <div class="form-check">
-                              <input type="checkbox" class="form-check-input" id="remember" name="chkremeber">
+                              <input type="checkbox" class="form-check-input" id="remember" name="chkremember">
                               <label class="form-check-label" for="remember">Remember Me</label>
                         </div>
                         <input type="submit" class="btn btn-danger btn-lg btn-block mt-4" value="Log In" />
@@ -82,6 +80,8 @@
                   </div>
             </footer>
       </main>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="js/script.js"></script>
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -142,26 +142,7 @@
         </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                type: 'password',
-                show: 'far fa-eye-slash'
-            },
-            methods: {
-                showPassword() {
-                    if (this.type === 'password') {
-                        this.type = 'text'
-                        this.show = 'far fa-eye'
-                    } else {
-                        this.type = 'password'
-                        this.show = 'far fa-eye-slash'
-                    }
-                }
-            }
-        })
-    </script>
+    <script src="js/script.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
