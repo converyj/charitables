@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link src="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -48,20 +48,15 @@
             </header>
             <form action="signUp-processing.php" method="POST">
                 <div class="form-row mt-4">
-                    <fieldset class="form-group border p-2">
-                        <legend class="w-auto">Role</legend>
-                        <div class="form-check col-md-12 custom-contol custom-radio">
-                            <input type="radio" class="form-check-input custom-control-input form-control-lg" id="donor" name="rdbRole" checked>
-                            <label class="form-check-label custom-control-label" for="donor">Donor</label>
-                        </div>
-                        <div class="form-check custom-contol custom-radio">
-                            <input type="radio" class="form-check-input custom-control-input" id="recipient" name="rdbRole">
-                            <label class="form-check-label custom-control-label" for="recipient">Recipient</label>
-                        </div>
-                    </fieldset>
+                    <div class="btn-group btn-group-lg" role="group" aria-label="btnGroup">
+                        <label for="donor" class="btn btn-primary">Donor</label>
+                        <input type="radio" id="donor" name="rdbRole" value="Donor" checked />
+                        <label for="recipient" class="btn btn-primary">Recipient</label>
+                        <input type="radio" id="recipient" name="rdbRole" value="Recipient" />
+                    </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-12">
                         <label for="email">Email</label>
                         <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
                     </div>
@@ -69,11 +64,16 @@
                         <label for="passwd">Password</label>
                         <div class="input-group mb-3">
                             <input :type="type" name="password" id="passwd" class="form-control" placeholder="Enter Password">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i v-bind:class="show"></i></button>
-                            </div>
+                            <!-- <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i v-bind:class="show"></i></button> -->
+                            <!-- </div> -->
                         </div>
                     </div>
+                    <div class="form-group col-md-6">
+                        <label for="passwd">Confirm Password</label>
+                        <input :type="type" name="conPassword" id="passwd" class="form-control">
+                    </div>
+                </div>
                 </div>
                 <div>
                     <div class="form-group">
@@ -82,18 +82,18 @@
                     </div>
                     <div class="form-group">
                         <label for="taxNum">Tax Number</label>
-                        <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="XXX-XXX-XXX">
+                        <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address Line 1</label>
+                        <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
                     </div>
                     <div class="form-group">
                         <label for="contact">Contact Number</label>
                         <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX">
                     </div>
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
-                    </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-12">
                             <label for="city">City</label>
                             <select id="city" name="city" class="form-control">
                                 <option selected>Choose ...</option>
@@ -105,7 +105,7 @@
                                 <option>Halifax</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="prov">Province</label>
                             <select id="prov" name="province" class="form-control">
                                 <option selected>Choose ...</option>
@@ -117,7 +117,7 @@
                                 <option>Nova Scotia</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-6">
                             <label for="postal">Postal Code</label>
                             <input type="text" name="postalCode" id="postal" class="form-control" placeholder="L1K3F0" />
                         </div>
@@ -125,7 +125,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="ckbAgree" id="agree">
                                 <label class="form-check-label" for="agree">
-                                    Agree
+                                    Agree to
                                 </label>
                                 <a href="#">Terms and Conditions</a>
                             </div>

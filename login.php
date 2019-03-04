@@ -44,7 +44,7 @@
       <main>
             <section class="container" id="app">
                   <header>
-                        <h1 class="text-center">Login In</h1>
+                        <h1 class="text-center">Log In</h1>
                   </header>
                   <form action="process-login.php" method="POST">
                         <div class="form-group">
@@ -69,8 +69,8 @@
                         </div>
                         <input type="submit" class="btn btn-danger btn-lg btn-block mt-4" value="Log In" />
                   </form>
-                  <p class="text-center mt-4">Don't have an account yet?</p>
-                  <a class="btn btn-danger btn-lg btn-block" href="signUp.php" role="button">Sign Up</a>
+                  <p class="text-center mt-4">or</p>
+                  <a class="btn btn-danger btn-lg btn-block" href="signUp.php" role="button">Create New Account</a>
             </section>
             <footer class="page-footer text-center pl-4">
                   <div class="icons mt-4">
