@@ -1,0 +1,7 @@
+input[type="radio"] + label {
+  background: blue;
+} 
+
+.btn-group input[type="radio"]:checked + label {
+    background: red;
+}

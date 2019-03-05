@@ -50,7 +50,7 @@
                 <div class="form-row mt-4">
                     <div class="btn-group btn-group-lg" role="group" aria-label="btnGroup">
                         <label for="donor" class="btn btn-primary">Donor</label>
-                        <input type="radio" id="donor" name="rdbRole" value="Donor" checked />
+                        <input type="radio" id="donor" name="rdbRole" value="Donor" checked="checked" />
                         <label for="recipient" class="btn btn-primary">Recipient</label>
                         <input type="radio" id="recipient" name="rdbRole" value="Recipient" />
                     </div>
