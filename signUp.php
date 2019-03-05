@@ -23,19 +23,16 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="donate.php">Support Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Chat List</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Donate</a>
+                    <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signUp.php">Sign Up</a>
                 </li>
             </ul>
         </div>
@@ -48,11 +45,13 @@
             </header>
             <form action="signUp-processing.php" method="POST">
                 <div class="form-row mt-4">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="btnGroup">
-                        <label for="donor" class="btn btn-primary" @click="seen = !seen">Donor</label>
-                        <input type="radio" id="donor" name="rdbRole" value="Donor" checked="checked" />
-                        <label for="recipient" class="btn btn-primary" @click="seen = !seen">Recipient</label>
-                        <input type="radio" id="recipient" name="rdbRole" value="Recipient" />
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input type="radio" name="rdbRole" id="donor" value="Donor" checked>Donor
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="rdbRole" id="recipient" value="Recipient">Recipient
+                        </label>
                     </div>
                 </div>
                 <div class="form-row">
@@ -60,18 +59,15 @@
                         <label for="email">Email</label>
                         <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-12">
                         <label for="passwd">Password</label>
                         <div class="input-group mb-3">
-                            <input :type="type" name="password" id="passwd" class="form-control" placeholder="Enter Password">
-                            <!-- <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i v-bind:class="show"></i></button> -->
-                            <!-- </div> -->
+                            <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password">
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-12">
                         <label for="passwd">Confirm Password</label>
-                        <input :type="type" name="conPassword" id="passwd" class="form-control">
+                        <input type="password" name="conPassword" id="passwd" class="form-control">
                     </div>
                 </div>
                 </div>
@@ -80,9 +76,9 @@
                         <label for="orgName">Organization Name</label>
                         <input type="text" name="organization" class="form-control" id="orgName">
                     </div>
-                    <div class="form-group" v-if="seen">
+                    <div class="form-group">
                         <label for="taxNum">Tax Number</label>
-                        <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="XXXX-XXXX-XXXX-XXXX">
+                        <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="xxxxxxxxxx">
                     </div>
                     <div class="form-group">
                         <label for="address">Address Line 1</label>
@@ -130,7 +126,7 @@
                                 <a href="#">Terms and Conditions</a>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-danger btn-lg btn-block mt-4">Join Now</button>
+                        <button type="submit" class="btn btn-danger btn-lg m-auto">Join Now</button>
             </form>
         </section>
         <footer class="page-footer text-center pl-4">

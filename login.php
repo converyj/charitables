@@ -24,16 +24,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                   <ul class="navbar-nav">
                         <li class="nav-item">
-                              <a class="nav-link" href="#">Dashboard</a>
+                              <a class="nav-link" href="donate.php">Support Us</a>
                         </li>
                         <li class="nav-item">
-                              <a class="nav-link" href="#">About Us</a>
+                              <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                              <a class="nav-link" href="#">Chat List</a>
-                        </li>
-                        <li class="nav-item">
-                              <a class="nav-link" href="#">Donate</a>
+                              <a class="nav-link" href="login.php">Login</a>
                         </li>
                         <li class="nav-item">
                               <a class="nav-link" href="signUp.php">Sign Up</a>
@@ -60,17 +57,18 @@
                                           <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i v-bind:class="show"></i></button>
                                     </div>
                               </div>
-
-                              <a class="float-right" href="#">Forgot Password</a>
                         </div>
                         <div class="form-check">
                               <input type="checkbox" class="form-check-input" id="remember" name="chkremember">
                               <label class="form-check-label" for="remember">Remember Me</label>
                         </div>
-                        <input type="submit" class="btn btn-danger btn-lg btn-block mt-4" value="Log In" />
+                        <button type="submit" class="btn btn-danger btn-lg m-auto">Log In</button>
                   </form>
                   <p class="text-center mt-4">or</p>
-                  <a class="btn btn-danger btn-lg btn-block" href="signUp.php" role="button">Create New Account</a>
+                  <a class="btn btn-danger btn-lg m-auto" href="signUp.php" role="button">Create New Account</a>
+                  <div class="text-center">
+                        <a  href="#">Forgot Password</a>
+                  </div>
             </section>
             <footer class="page-footer text-center pl-4">
                   <div class="icons mt-4">
