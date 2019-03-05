@@ -2,7 +2,8 @@
             el: '#app',
             data: {
                 type: 'password',
-                show: 'far fa-eye-slash'
+                show: 'far fa-eye-slash', 
+                seen: true
             },
             methods: {
                 showPassword() {

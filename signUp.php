@@ -49,9 +49,9 @@
             <form action="signUp-processing.php" method="POST">
                 <div class="form-row mt-4">
                     <div class="btn-group btn-group-lg" role="group" aria-label="btnGroup">
-                        <label for="donor" class="btn btn-primary">Donor</label>
+                        <label for="donor" class="btn btn-primary" @click="seen = !seen">Donor</label>
                         <input type="radio" id="donor" name="rdbRole" value="Donor" checked="checked" />
-                        <label for="recipient" class="btn btn-primary">Recipient</label>
+                        <label for="recipient" class="btn btn-primary" @click="seen = !seen">Recipient</label>
                         <input type="radio" id="recipient" name="rdbRole" value="Recipient" />
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         <label for="orgName">Organization Name</label>
                         <input type="text" name="organization" class="form-control" id="orgName">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" v-if="seen">
                         <label for="taxNum">Tax Number</label>
                         <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="XXXX-XXXX-XXXX-XXXX">
                     </div>
