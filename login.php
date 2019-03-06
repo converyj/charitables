@@ -39,7 +39,7 @@
             </div>
       </nav>
       <main>
-            <section class="container" id="app">
+            <section class="col-md-6 col-lg-6 container" id="app">
                   <header>
                         <h1 class="text-center">Log In</h1>
                   </header>
@@ -62,12 +62,22 @@
                               <input type="checkbox" class="form-check-input" id="remember" name="chkremember">
                               <label class="form-check-label" for="remember">Remember Me</label>
                         </div>
-                        <button type="submit" class="btn btn-danger btn-lg m-auto">Log In</button>
+                        <div class="text-center">
+                          <br>
+                          <div class="row">
+                            <button type="submit" class="col-9 col-md-8 col-sm-8 btn btn-primary  m-auto mybuttonstyle">Log In</button>
+                          </div>
+
+                        </div>
+
                   </form>
                   <p class="text-center mt-4">or</p>
-                  <a class="btn btn-danger btn-lg m-auto" href="signUp.php" role="button">Create New Account</a>
+                  <div class="row">
+                  <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button">Create New Account</a>
+                  </div>
+                  <br>
                   <div class="text-center">
-                        <a  href="#">Forgot Password</a>
+                        <a  href="#">Forgot Password ?</a>
                   </div>
             </section>
             <footer class="page-footer text-center pl-4">
