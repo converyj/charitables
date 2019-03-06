@@ -39,7 +39,7 @@
             </div>
       </nav>
       <main>
-            <section class="col-md-6 col-lg-6 container" id="app">
+            <section class="col-md-6 col-lg-6 col-xl-6 container" id="app">
                   <header>
                         <h1 class="text-center">Log In</h1>
                   </header>
