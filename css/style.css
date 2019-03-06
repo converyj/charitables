@@ -1,13 +1,41 @@
 input[type="radio"] + label {
   background: blue;
-} 
+}
 
 .btn-group input[type="radio"]:checked + label {
     background: red;
 }
 
-@media screen and (min-width: 960px) {
-  .container {
-    width: 90%;
+@media only screen and (min-width: 968) {
+
+}
+
+.mybuttonstyle{
+  color: white;
+  border: 0 !important;
+  background: rgba(110, 127, 255, 0.85) !important;
+}
+.mybuttonstyle2{
+  color: white;
+  border: 0 !important;
+  background: rgba(	255, 106, 156, 0.85) !important;
+}
+
+.ca{
+  text-align: center;
+
   }
+
+
+.abc{
+  width:100%;
+
+}
+.btn-primary:hover, .btn-primary:active{
+  background: rgba(110, 127, 255, .92) !important;
+}
+
+.btn-primary2:hover, .btn-primary2:active{
+
+  background: rgba(	255, 106, 156, 1) !important;
 }
