@@ -73,7 +73,7 @@
                   </form>
                   <p class="text-center mt-4">or</p>
                   <div class="row">
-                  <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button">Create New Account</a>
+                        <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button">Create New Account</a>
                   </div>
                   <br>
                   <div class="text-center">
