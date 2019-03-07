@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sign Up | Charitables</title>
+    <title>Donate/Request Form | Charitables</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
@@ -23,62 +23,115 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="dashboard.php">Dashboard</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="donate.php">Support Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Edit Account</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="signUp.php">Sign Up</a>
+                    <a class="nav-link" href="#">
+                        <img src="" alt="">
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
     <main>
         <section class="container" id="app">
-            <header>
-                <h1 class="text-center">Sign Up</h1>
-                <h5 class="text-center">Every Little Help Counts</h5>
-            </header>
-            <form action="signUp-processing.php" method="POST" class="needs-validation" novalidate>
-                <div class="form-row mt-4">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="radio" name="rdbRole" id="donor" value="Donor" checked>Donor
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="rdbRole" id="recipient" value="Recipient">Recipient
-                        </label>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
-                        <div class="invalid-feedback">
-                            Email Required.
+            <form action="" method="POST">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#food">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#clothes">Clothes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#all">All</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="food" class="tab-pane active"><br>
+                        <div class="col-4">
+                            <!-- call to database (dynamically) -->
+                            <img />
+                            <p class="text-center">Fruit</p>
                         </div>
                     </div>
-                    <div class="form-group col-12">
-                        <label for="passwd">Password</label>
-                        <div class="input-group mb-3">
-                            <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password" required>
-                            <div class="invalid-feedback">
-                                Password Required.
+                    <div id="clothes" class="tab-pane fade"><br>
+                        <div class="col-4">
+                            <!-- call to database (dynamically) -->
+                            <img />
+                            <p class="text-center">Tops</p>
+                        </div>
+                    </div>
+                    <div id="all" class="container tab-pane fade"><br>
+                        <div class="col-4">
+                            <!-- call to database (dynamically) -->
+                            <button type="button" data-toggle="modal" data-target="#itemsModal">
+                                <img />
+                            </button>
+                            <p class="text-center">Fruit</p>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Item:</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="float-left">
+                                        <img />
+                                    </div>
+                                    <div class="form-group float-left">
+                                        <label for="quantity">Quantity:</label>
+                                        <input type="text" name="quantity" class="form-control" autofocus="autofocus" id="quantity" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Accept</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group col-12">
-                        <label for="passwd">Confirm Password</label>
-                        <input type="password" name="conPassword" id="passwd" class="form-control">
-                        <div class="invalid-feedback">
-                                Passwords do not match.
+
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="passwd">Password</label>
+                            <div class="input-group mb-3">
+                                <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password">
+                            </div>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="passwd">Confirm Password</label>
+                            <input type="password" name="conPassword" id="passwd" class="form-control">
                         </div>
                     </div>
-                </div>
                 </div>
                 <div>
                     <div class="form-group">
