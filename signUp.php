@@ -47,10 +47,10 @@
                 <div class="form-row mt-4">
                     <div class="btn-group" data-toggle="buttons">
                         <label class="btn btn-secondary active">
-                            <input type="radio" name="rdbRole" id="donor" value="Donor" checked>Donor
+                            <input type="radio" name="rdbRole" id="donor" value="1" checked>Donor
                         </label>
                         <label class="btn btn-secondary">
-                            <input type="radio" name="rdbRole" id="recipient" value="Recipient">Recipient
+                            <input type="radio" name="rdbRole" id="recipient" value="2">Recipient
                         </label>
                     </div>
                 </div>
