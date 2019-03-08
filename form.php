@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+
+$_SESSION['role'] = '1';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,15 +29,24 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
+                <?php
+                if (isset($_SESSION['role'])) {
+                    ?>
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
                 </li>
+                <?php 
+            }
+            ?>
                 <li class="nav-item">
                     <a class="nav-link" href="donate.php">Support Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
+                <?php
+                if (isset($_SESSION['role'])) {
+                    ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Profile
@@ -46,6 +62,18 @@
                         <img src="" alt="">
                     </a>
                 </li>
+                <?php 
+            } else {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signUp.php">Sign Up</a>
+                </li>
+                <?php 
+            }
+            ?>
             </ul>
         </div>
     </nav>
@@ -83,53 +111,48 @@
                     <div id="all" class="container tab-pane fade"><br>
                         <div class="col-4">
                             <!-- call to database (dynamically) -->
-                            <button type="button" data-toggle="modal" data-target="#itemsModal">
-                                <img />
-                            </button>
-                            <p class="text-center">Fruit</p>
+                            <label for="fruit">
+                                <img src="fruit.jpg" />
+                            </label>
+                            <input type="checkbox" id="fruit" name="fruit" value="" data-toggle="modal" data-target="#itemsModal" />Fruit
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class=" modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">Item:</h5>
+                                    <h5 class="modal-title" id="modalLabel">Item Quantity</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="float-left">
-                                        <img />
+                                    <div class="float-left mr-4">
+                                        <img src="fruit.jpg" width="10" height="10" />
+                                        <p>Fruit</p>
                                     </div>
                                     <div class="form-group float-left">
                                         <label for="quantity">Quantity:</label>
                                         <input type="text" name="quantity" class="form-control" autofocus="autofocus" id="quantity" required>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Accept</button>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-12">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
+                        <div class="form-group col-4">
+                            <label for="items">Items</label>
+                            <input type="text" name="item" class="form-control" autofocus="autofocus" id="items" disabled>
                         </div>
-                        <div class="form-group col-12">
-                            <label for="passwd">Password</label>
-                            <div class="input-group mb-3">
-                                <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password">
-                            </div>
-                        </div>
-                        <div class="form-group col-12">
-                            <label for="passwd">Confirm Password</label>
-                            <input type="password" name="conPassword" id="passwd" class="form-control">
+
+                        <div class="form-group col-2">
+                            <label for="qty">Quantity</label>
+                            <input type="text" name="quantity" id="qty" class="form-control" disabled>
                         </div>
                     </div>
                 </div>
@@ -208,4 +231,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
-</html> 
+</htm l> 
