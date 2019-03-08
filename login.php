@@ -63,7 +63,7 @@
                 <div class="text-center">
                     <br>
                     <div class="row">
-                        <button type="submit" class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle">Log In</button>
+                        <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary m-auto mybuttonstyle" href="dashboard.php" role="button">Log In</a>
                     </div>
 
                 </div>

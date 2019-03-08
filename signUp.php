@@ -135,7 +135,7 @@
                                 <a href="#">Terms and Conditions</a>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-danger btn-lg m-auto">Join Now</button>
+                        <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="dashboard.php" role="button">Join Now</a>
             </form>
         </section>
         <footer class="page-footer text-center pl-4">

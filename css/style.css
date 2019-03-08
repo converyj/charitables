@@ -1,22 +1,13 @@
-input[type="radio"] + label {
-  background: blue;
-}
-
-.btn-group input[type="radio"]:checked + label {
-    background: red;
-}
-
 @media only screen and (min-width: 968) {
 
 }
 
 .mybuttonstyle{
-  color: white;
   border: 0 !important;
   background: rgba(110, 127, 255, 0.85) !important;
 }
+
 .mybuttonstyle2{
-  color: white;
   border: 0 !important;
   background: rgba(	255, 106, 156, 0.85) !important;
 }
