@@ -63,11 +63,9 @@
                 <div class="text-center">
                     <br>
                     <div class="row">
-                        <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary m-auto mybuttonstyle" href="dashboard.php" role="button">Log In</a>
+                        <input type="submit" value="Log In" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary m-auto mybuttonstyle" />
                     </div>
-
                 </div>
-
             </form>
             <p class="text-center mt-4">or</p>
             <div class="row">

@@ -72,70 +72,69 @@
                         </div>
                     </div>
                     <div class="form-group col-12">
-                        <label for="passwd">Confirm Password</label>
-                        <input type="password" name="conPassword" id="passwd" class="form-control">
+                        <label for="conPasswd">Confirm Password</label>
+                        <input type="password" name="conPassword" id="conPasswd" class="form-control">
                         <div class="invalid-feedback">
-                                Passwords do not match.
+                            Passwords do not match.
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="orgName">Organization Name</label>
+                    <input type="text" name="organization" class="form-control" id="orgName">
                 </div>
-                <div>
-                    <div class="form-group">
-                        <label for="orgName">Organization Name</label>
-                        <input type="text" name="organization" class="form-control" id="orgName">
+                <div class="form-group">
+                    <label for="taxNum">Tax Number</label>
+                    <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="xxxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address Line 1</label>
+                    <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="city">City</label>
+                        <select id="city" name="city" class="form-control">
+                            <option selected>Choose ...</option>
+                            <option>Toronto</option>
+                            <option>Vancouver</option>
+                            <option>Montreal</option>
+                            <option>Calgary</option>
+                            <option>Edmonton</option>
+                            <option>Halifax</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="prov">Province</label>
+                        <select id="prov" name="province" class="form-control">
+                            <option selected>Choose ...</option>
+                            <option>Alberta</option>
+                            <option>British Columbia</option>
+                            <option>New Brunswick</option>
+                            <option>Ontario</option>
+                            <option>Quebec</option>
+                            <option>Nova Scotia</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="postal">Postal Code</label>
+                        <input type="text" name="postalCode" id="postal" class="form-control" placeholder="L1K3F0" />
                     </div>
                     <div class="form-group">
-                        <label for="taxNum">Tax Number</label>
-                        <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="xxxxxxxxxx">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="ckbAgree" id="agree">
+                            <label class="form-check-label" for="agree">
+                                Agree to
+                            </label>
+                            <a href="#">Terms and Conditions</a>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="address">Address Line 1</label>
-                        <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact">Contact Number</label>
-                        <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-12">
-                            <label for="city">City</label>
-                            <select id="city" name="city" class="form-control">
-                                <option selected>Choose ...</option>
-                                <option>Toronto</option>
-                                <option>Vancouver</option>
-                                <option>Montreal</option>
-                                <option>Calgary</option>
-                                <option>Edmonton</option>
-                                <option>Halifax</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="prov">Province</label>
-                            <select id="prov" name="province" class="form-control">
-                                <option selected>Choose ...</option>
-                                <option>Alberta</option>
-                                <option>British Columbia</option>
-                                <option>New Brunswick</option>
-                                <option>Ontario</option>
-                                <option>Quebec</option>
-                                <option>Nova Scotia</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="postal">Postal Code</label>
-                            <input type="text" name="postalCode" id="postal" class="form-control" placeholder="L1K3F0" />
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="ckbAgree" id="agree">
-                                <label class="form-check-label" for="agree">
-                                    Agree to
-                                </label>
-                                <a href="#">Terms and Conditions</a>
-                            </div>
-                        </div>
-                        <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="dashboard.php" role="button">Join Now</a>
+                </div>
+                <input type="submit" value="Join Now" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" />
             </form>
         </section>
         <footer class="page-footer text-center pl-4">
