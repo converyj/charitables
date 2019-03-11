@@ -40,7 +40,7 @@
     <main>
         <section class="col-sm-5 col-md-8 col-lg-4 col-xl-3 container" id="app">
             <header>
-                <h1 class="text-center">Log In</h1>
+                <h1 class="text-center pt-4">Log In</h1>
             </header>
             <form action="process-login.php" method="POST">
                 <div class="form-group">
@@ -50,9 +50,14 @@
                 <div class="form-group">
                     <label for="passwd">Password</label>
                     <div class="input-group mb-3">
-                        <input :type="type" name="password" id="passwd" class="form-control" placeholder="Enter Password">
+                        <input :type="type" name="password" id="passwd" class="form-control border-right-0" placeholder="Enter Password">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button" @click="showPassword"><i v-bind:class="show"></i></button>
+                            <button class="btn btn-outline-secondary border-left-0 rounded-right" 
+                            
+                            type="button" @click="showPassword">
+                            <!-- style="border-color:#ced4da"  -->
+                                <i v-bind:class="show"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -69,20 +74,20 @@
                 </div>
 
             </form>
-            <p class="text-center mt-4">or</p>
+            <p class="text-center mt-3 mb-3">or</p>
             <div class="row">
                 <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button">Create New Account</a>
             </div>
             <br>
             <div class="text-center">
-                <a href="#">Forgot Password ?</a>
+                <a href="#">Forgot Password?</a>
             </div>
         </section>
-        <footer class="page-footer text-center pl-4">
+        <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
                 <i class="fab fa-twitter pr-2"></i>
                 <i class="fab fa-facebook-f pr-2"></i>
-                <i class="fab fa-instagram pr-2"></i>
+                <!-- <i class="fab fa-instagram pr-2"></i> -->
             </div>
         </footer>
     </main>

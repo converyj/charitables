@@ -2,6 +2,11 @@
 
 }
 
+@media only screen and (min-width: 576){
+	
+}
+
+
 .mybuttonstyle{
   border: 0 !important;
   background: rgba(110, 127, 255, 0.85) !important;
@@ -30,3 +35,39 @@
 
   background: rgba(	255, 106, 156, 1) !important;
 }
+
+/*i'm trying to change the border color to match the form-control class but it won't read it???? i KNOW IT'S RIGHT*/
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: #ced4da;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #ced4da;
+}
+
+
+/*may not matter*/
+.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5);
+}
+
+.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
+  color: #6c757d;
+  background-color: transparent;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #ced4da;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5);
+}
+/*may not need ^*/
