@@ -38,7 +38,7 @@
         </div>
     </nav>
     <main>
-        <section class="col-9 col-sm-5 col-md-8 col-lg-4 col-xl-3 container" id="app">
+        <section class="col-9 col-sm-5 col-md-5 col-lg-4 col-xl-3 container" id="app">
             <header>
                 <h1 class="text-center pt-4">Log In</h1>
             </header>

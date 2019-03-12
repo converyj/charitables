@@ -5,20 +5,18 @@
 /*unsure of this one*/
 @media only screenand (min-width:0){
 	.col-9{
-		  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
+		-ms-flex: 0 0 100%;
+  		flex: 0 0 100%;
+  		max-width: 100%;
 	}
 }
 
 @media only screen and (min-width: 370){
-.col-9{
-	-ms-flex: 0 0 75%;
-  flex: 0 0 75%;
-  max-width: 75%;
-
-
-}
+	.col-9{
+		-ms-flex: 0 0 75%;
+  		flex: 0 0 75%;
+  		max-width: 75%;
+	}
 }
 
 
@@ -52,7 +50,7 @@
 }
 
 /*i'm trying to change the border color to match the form-control class but it won't read it???? i KNOW IT'S RIGHT*/
-.btn-outline-secondary {
+/*.btn-outline-secondary {
   color: #6c757d;
   border-color: #ced4da;
 }
@@ -61,11 +59,20 @@
   color: #fff;
   background-color: #6c757d;
   border-color: #ced4da;
-}
+}*/
+/*.greyBorder{
+	  /*color: #6c757d;*/
+	/*border: 1px solid #ced4da; */
+  /*border-color: #ced4da;*/
 
+/*}*/
+/*#greyBorder{
+  border-color: #ced4da !important;
+
+}*/
 
 /*may not matter*/
-.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+/*.btn-outline-secondary:focus, .btn-outline-secondary.focus {
   box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5);
 }
 
@@ -84,5 +91,14 @@
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-secondary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5);
-}
+}*/
 /*may not need ^*/
+
+/*SIGN UP*/
+.centerSignUpButtons{
+	width:15em;
+}
+
+[type='radio'] {
+display: none; 
+}

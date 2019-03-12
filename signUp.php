@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link src="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -40,12 +40,12 @@
     <main>
         <section class="container" id="app">
             <header>
-                <h1 class="text-center">Sign Up</h1>
+                <h1 class="text-center pt-4">Sign Up</h1>
                 <h5 class="text-center">Every Little Help Counts</h5>
             </header>
             <form action="signUp-processing.php" method="POST" class="needs-validation" novalidate>
                 <div class="form-row mt-4">
-                    <div class="btn-group" data-toggle="buttons">
+                    <div class="btn-group m-auto centerSignUpButtons" data-toggle="buttons">
                         <label class="btn btn-secondary active">
                             <input type="radio" name="rdbRole" id="donor" value="1" checked>Donor
                         </label>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="passwd">Password</label>
-                        <div class="input-group mb-3">
+                        <div class="input-group">
                             <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password" required>
                             <div class="invalid-feedback">
                                 Password Required.
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="Join Now" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" />
+                <input type="submit" value="Join Now" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2 centerSignUpButtons " />
             </form>
         </section>
         <footer class="page-footer text-center pl-4">
