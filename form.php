@@ -2,7 +2,7 @@
 
 session_start();
 
-$_SESSION['role'] = '1';
+
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $_SESSION['role'] = '1';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link src="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -109,109 +109,73 @@ $_SESSION['role'] = '1';
                         </div>
                     </div>
                     <div id="all" class="container tab-pane fade"><br>
-                        <div class="col-4">
-                            <!-- call to database (dynamically) -->
-                            <label for="fruit">
-                                <img src="fruit.jpg" />
-                            </label>
-                            <input type="checkbox" id="fruit" name="fruit" value="" data-toggle="modal" data-target="#itemsModal" />Fruit
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <!-- call to database (dynamically) -->
+                                <label :ref="id + '-test'" class="justify-content-center">Fruit</label>
+                                <button type="button" id="cat1" @click="getId(id)" value="fruit" data-toggle="modal" data-target="#itemsModal">
+                                    <img src="fruit.jpg" width="50" height="50" />
+                                </button><br />
+
+                            </div>
+                            <div class="form-group col-4">
+                                <!-- call to database (dynamically) -->
+                                <label :ref="id + '-test'" class="justify-content-center">Veg</label>
+                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img src="fruit.jpg" width="50" height="50" />
+                                </button><br />
+
+                            </div>
+
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class=" modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">Item Quantity</h5>
+                                    <h5 class="modal-title" id="modalLabel"></h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="float-left mr-4">
-                                        <img src="fruit.jpg" width="10" height="10" />
-                                        <p>Fruit</p>
+                                    <div class="form-group">
+                                        <label for="item">Item</label>
+                                        <input type="text" name="item" class="form-control" v-model="name" id="item" required>
+                                        <label for="qty">Quantity</label>
+                                        <input type="text" name="qty" class="form-control" v-model="quantity" id="qty" required>
                                     </div>
-                                    <div class="form-group float-left">
-                                        <label for="quantity">Quantity:</label>
-                                        <input type="text" name="quantity" class="form-control" autofocus="autofocus" id="quantity" required>
-                                    </div>
+                                    <!-- <div class="form-group" v-for='item in items'>
+                                    <label for="qty">Quantity</label>
+                                    <input type="text" name="qty" class="form-control" v-model.number="item.quantity" id="qty" required>
+                                </div> -->
                                 </div>
                                 <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" @click="addItem(items.name, items.quantity)">Accept</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-4">
-                            <label for="items">Items</label>
-                            <input type="text" name="item" class="form-control" autofocus="autofocus" id="items" disabled>
-                        </div>
-
-                        <div class="form-group col-2">
-                            <label for="qty">Quantity</label>
-                            <input type="text" name="quantity" id="qty" class="form-control" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="form-group">
-                        <label for="orgName">Organization Name</label>
-                        <input type="text" name="organization" class="form-control" id="orgName">
-                    </div>
-                    <div class="form-group">
-                        <label for="taxNum">Tax Number</label>
-                        <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="xxxxxxxxxx">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address Line 1</label>
-                        <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact">Contact Number</label>
-                        <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-12">
-                            <label for="city">City</label>
-                            <select id="city" name="city" class="form-control">
-                                <option selected>Choose ...</option>
-                                <option>Toronto</option>
-                                <option>Vancouver</option>
-                                <option>Montreal</option>
-                                <option>Calgary</option>
-                                <option>Edmonton</option>
-                                <option>Halifax</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="prov">Province</label>
-                            <select id="prov" name="province" class="form-control">
-                                <option selected>Choose ...</option>
-                                <option>Alberta</option>
-                                <option>British Columbia</option>
-                                <option>New Brunswick</option>
-                                <option>Ontario</option>
-                                <option>Quebec</option>
-                                <option>Nova Scotia</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="postal">Postal Code</label>
-                            <input type="text" name="postalCode" id="postal" class="form-control" placeholder="L1K3F0" />
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="ckbAgree" id="agree">
-                                <label class="form-check-label" for="agree">
-                                    Agree to
-                                </label>
-                                <a href="#">Terms and Conditions</a>
+                    <section id="summary">
+                        <div class="form-row" v-for="item, index in items">
+                            <div class="form-group col-4">
+                                <label for="items">Item</label>
+                                <input v-model.lazy="item.name" type="text" name="item" class="form-control" id="items">
+                                <!-- <label for="qty">Quantity</label>
+                            <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control" disabled> -->
                             </div>
+                            <div class="form-group col-2">
+                                <label for=" qty">Quantity</label>
+                                <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control">
+                            </div>
+                            <button type="button" @click="remove(index)">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
                         </div>
-                        <button type="submit" class="btn btn-danger btn-lg m-auto">Join Now</button>
+                    </section>
+                    <input type="submit" value="Confirm" class="btn btn-primary btn-primary2 m-auto mybuttonstyle2" />
             </form>
         </section>
         <footer class="page-footer text-center pl-4">
@@ -223,7 +187,7 @@ $_SESSION['role'] = '1';
         </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/form.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -231,4 +195,4 @@ $_SESSION['role'] = '1';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
-</htm l> 
+</html> 
