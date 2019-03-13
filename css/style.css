@@ -19,86 +19,85 @@
 	}
 }
 
-
-.mybuttonstyle{
-  border: 0 !important;
-  background: rgba(110, 127, 255, 0.85) !important;
-}
-
-.mybuttonstyle2{
-  border: 0 !important;
-  background: rgba(	255, 106, 156, 0.85) !important;
-}
-
 .ca{
   text-align: center;
-
-  }
-
+}
 
 .abc{
   width:100%;
-
 }
+
+/*blue*/
+.mybuttonstyle{
+	border-color: rgba(110, 127, 255, 0.85) !important;
+	/*border: 0 !important;*/
+	background: rgba(110, 127, 255, 0.85) !important;
+}
+
+/*pink*/
+.mybuttonstyle2{
+	border: 0 !important;
+	background: rgba(	255, 106, 156, 0.85) !important;
+	color: #fff;
+}
+
+/*blue*/
 .btn-primary:hover, .btn-primary:active{
-  background: rgba(110, 127, 255, .92) !important;
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
 }
 
+/*pink*/
 .btn-primary2:hover, .btn-primary2:active{
-
   background: rgba(	255, 106, 156, 1) !important;
-}
-
-/*i'm trying to change the border color to match the form-control class but it won't read it???? i KNOW IT'S RIGHT*/
-/*.btn-outline-secondary {
-  color: #6c757d;
-  border-color: #ced4da;
-}
-
-.btn-outline-secondary:hover {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #ced4da;
-}*/
-/*.greyBorder{
-	  /*color: #6c757d;*/
-	/*border: 1px solid #ced4da; */
-  /*border-color: #ced4da;*/
+}
 
-/*}*/
-/*#greyBorder{
-  border-color: #ced4da !important;
+/*changed sign up hovers to blue*/
+.btn-outline-secondary:hover {
+	color: #fff;
+/*  background-color: #6c757d;
+  border-color: #6c757d;*/
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
+}
 
-}*/
-
-/*may not matter*/
-/*.btn-outline-secondary:focus, .btn-outline-secondary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5);
+/*to change*/
+.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+	box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
 }
 
 .btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
-  color: #6c757d;
-  background-color: transparent;
+	color: rgba(110, 127, 255, 1) !important;
+	background-color: transparent;
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-secondary.dropdown-toggle {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #ced4da;
+	color: #fff;
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
 }
 
+/*to change*/
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-secondary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(206, 212, 218, 0.5);
-}*/
-/*may not need ^*/
+	box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}
+/*changed sign up hovers to blue*/
 
-/*SIGN UP*/
+
+
+/*SIGN UP
 .centerSignUpButtons{
 	width:15em;
 }
 
+.centerSignUpButtons2{
+	width:25em;
+}*/
+
 [type='radio'] {
 display: none; 
 }
+
