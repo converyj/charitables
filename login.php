@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Log In | Charitables</title>
+    <title>Login | Charitables</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
@@ -39,9 +39,9 @@
         </div>
     </nav>
     <main>
-        <section class="col-9 col-sm-5 col-md-8 col-lg-4 col-xl-3 container" id="app">
+        <section class="col-9 col-sm-5 col-md-5 col-lg-4 col-xl-4 container" id="app">
             <header>
-                <h1 class="text-center pt-4">Log In</h1>
+                <h1 class="text-center pt-4">Login</h1>
             </header>
             <form action="process-login.php" method="POST" data-parsley-validate>
                 <div class="form-group">
@@ -67,7 +67,7 @@
                 <div class="text-center">
                     <br>
                     <div class="row">
-                        <input type="submit" value="Log In" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary m-auto mybuttonstyle" />
+                        <input type="submit" value="Login" class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle" />
                     </div>
                 </div>
             </form>

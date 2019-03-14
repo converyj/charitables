@@ -38,18 +38,18 @@
         </div>
     </nav>
     <main>
-        <section class="container" id="app">
+        <section class="col-9 col-sm-6 col-md-6 col-lg-6 col-xl-6 container" id="app">
             <header>
-                <h1 class="text-center">Sign Up</h1>
+                <h1 class="text-center pt-4">Sign Up</h1>
                 <h5 class="text-center">Every Little Help Counts</h5>
             </header>
             <form action="signUp-processing.php" method="POST" class="needs-validation" novalidate>
                 <div class="form-row mt-4">
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
+                    <div class="btn-group m-auto centerSignUpButtons" data-toggle="buttons">
+                        <label class="btn btn-outline-secondary active">
                             <input type="radio" name="rdbRole" id="donor" value="1" checked>Donor
                         </label>
-                        <label class="btn btn-secondary">
+                        <label class="btn btn-outline-secondary">
                             <input type="radio" name="rdbRole" id="recipient" value="2">Recipient
                         </label>
                     </div>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="passwd">Password</label>
-                        <div class="input-group mb-3">
+                        <div class="input-group">
                             <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password" required>
                             <div class="invalid-feedback">
                                 Password Required.
@@ -134,14 +134,17 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="Join Now" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" />
+
+                <div class="text-center">
+                    <input type="submit" value="Join Now" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2 centerSignUpButtons2" />
+                </div>
             </form>
         </section>
-        <footer class="page-footer text-center pl-4">
+        <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
                 <i class="fab fa-twitter pr-2"></i>
                 <i class="fab fa-facebook-f pr-2"></i>
-                <i class="fab fa-instagram pr-2"></i>
+                <!-- <i class="fab fa-instagram pr-2"></i> -->
             </div>
         </footer>
     </main>
