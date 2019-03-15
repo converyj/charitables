@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/parsley.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link src="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -43,7 +44,7 @@
                 <h1 class="text-center pt-4">Sign Up</h1>
                 <h5 class="text-center">Every Little Help Counts</h5>
             </header>
-            <form action="signUp-processing.php" method="POST" class="needs-validation" novalidate>
+            <form action="signUp-processing.php" method="POST">
                 <div class="form-row mt-4">
                     <div class="btn-group m-auto" data-toggle="buttons">
                         <label class="btn btn-outline-secondary active">
@@ -58,47 +59,38 @@
                     <div class="form-group col-12">
                         <label for="email">Email</label>
                         <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
-                        <div class="invalid-feedback">
-                            Email Required.
-                        </div>
                     </div>
                     <div class="form-group col-12">
                         <label for="passwd">Password</label>
                         <div class="input-group">
                             <input type="password" name="password" id="passwd" class="form-control" placeholder="Enter Password" required>
-                            <div class="invalid-feedback">
-                                Password Required.
-                            </div>
                         </div>
                     </div>
                     <div class="form-group col-12">
                         <label for="conPasswd">Confirm Password</label>
-                        <input type="password" name="conPassword" id="conPasswd" class="form-control">
-                        <div class="invalid-feedback">
-                            Passwords do not match.
-                        </div>
+                        <input type="password" name="conPassword" id="conPasswd" data-equalto="passwd" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="orgName">Organization Name</label>
-                    <input type="text" name="organization" class="form-control" id="orgName">
+                    <input type="text" name="organization" class="form-control" id="orgName" required>
                 </div>
                 <div class="form-group">
                     <label for="taxNum">Tax Number</label>
-                    <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="xxxxxxxxxx">
+                    <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="xxxxxxxxxx" required>
                 </div>
                 <div class="form-group">
                     <label for="address">Address Line 1</label>
-                    <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street">
+                    <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street" required>
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact Number</label>
-                    <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX">
+                    <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="city">City</label>
-                        <select id="city" name="city" class="form-control">
+                        <select id="city" name="city" class="form-control" required>
                             <option selected>Choose ...</option>
                             <option>Toronto</option>
                             <option>Vancouver</option>
@@ -110,7 +102,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="prov">Province</label>
-                        <select id="prov" name="province" class="form-control">
+                        <select id="prov" name="province" class="form-control" required>
                             <option selected>Choose ...</option>
                             <option>Alberta</option>
                             <option>British Columbia</option>
@@ -122,11 +114,11 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="postal">Postal Code</label>
-                        <input type="text" name="postalCode" id="postal" class="form-control" placeholder="L1K3F0" />
+                        <input type="text" name="postalCode" id="postal" class="form-control" placeholder="L1K3F0" required />
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="ckbAgree" id="agree">
+                            <input class="form-check-input" type="checkbox" name="ckbAgree" id="agree" required>
                             <label class="form-check-label" for="agree">
                                 Agree to
                             </label>
@@ -153,6 +145,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>

@@ -43,7 +43,7 @@
             <header>
                 <h1 class="text-center pt-4">Login</h1>
             </header>
-            <form action="process-login.php" method="POST" data-parsley-validate>
+            <form action="process-login.php" method="POST">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>

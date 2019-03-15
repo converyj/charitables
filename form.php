@@ -113,8 +113,8 @@ session_start();
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Fruit</label>
-                                <button type="button" id="cat1" @click="getId(id)" value="fruit" data-toggle="modal" data-target="#itemsModal">
+                                <label @click="getId($event)":ref="id + '-test'" class="justify-content-center">Fruit</label>
+                                <button type="button" id="cat1"  value="fruit" data-toggle="modal" data-target="#itemsModal">
                                     <img src="fruit.jpg" width="50" height="50" />
                                 </button><br />
 
@@ -225,7 +225,7 @@ session_start();
                                 </div> -->
                                 </div>
                                 <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal" @click="addItem()">Accept</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" @click="addItem">Accept</button>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
@@ -248,7 +248,7 @@ session_start();
                             </button>
                         </div>
                     </section>
-                    <input type="submit" value="Confirm" class="btn btn-primary btn-primary2 m-auto mybuttonstyle2" />
+                    <input type="submit" @click="parse" value="Confirm" class="btn btn-primary btn-primary2 m-auto mybuttonstyle2" />
             </form>
         </section>
         <footer class="page-footer text-center pb-4">

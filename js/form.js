@@ -9,13 +9,15 @@ var vm = new Vue({
     },
 
     methods: {
-        getId(id) {
-            console.log(id)
+        getId(e) {
+            console.log(e.target.value)
+            // console.log(id)
+            // console.log((this.$refs.attr().value));
             // console.log(e.target)
             // console.log(e.target.value)
             // console.log(this.value)
-            console.log(this.$refs)
-            console.log(this.$refs[id + '-test'].innerText)
+            // console.log(this.$refs)
+            // console.log(this.$refs[id + '-test'].innerText)
             // var buttonValue = this.$refs.value;
             // return buttonValue;
         },
@@ -34,6 +36,14 @@ var vm = new Vue({
 
         remove(index) {
             this.$delete(this.items, index);
+        },
+
+        parse() {
+            var myObjStr = JSON.stringify(this.items);
+
+            console.log(myObjStr)
         }
+        
     }
+    
 })
