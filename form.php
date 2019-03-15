@@ -113,8 +113,8 @@ session_start();
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <!-- call to database (dynamically) -->
-                                <label @click="getId($event)":ref="id + '-test'" class="justify-content-center">Fruit</label>
-                                <button type="button" id="cat1"  value="fruit" data-toggle="modal" data-target="#itemsModal">
+                                <button-value value="fruit" class="justify-content-center"></button-value>
+                                <button type="button" id="cat1" @click="getId" data-toggle="modal" data-target="#itemsModal">
                                     <img src="fruit.jpg" width="50" height="50" />
                                 </button><br />
 

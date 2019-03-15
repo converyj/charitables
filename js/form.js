@@ -5,12 +5,20 @@ var vm = new Vue({
         items: [],
         name: '',
         quantity: '',
-        id: ''
+        id: '',
+        value: ''
+        
     },
+    Vue.component('button-value', {
+        props: ['value'], 
+        template: '<h3>{{ value }}</h3>'
+    }
+    )
+   
 
     methods: {
-        getId(e) {
-            console.log(e.target.value)
+        getId(value) {
+            console.log(this.value)
             // console.log(id)
             // console.log((this.$refs.attr().value));
             // console.log(e.target)
@@ -47,3 +55,4 @@ var vm = new Vue({
     }
     
 })
+
