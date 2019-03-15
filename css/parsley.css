@@ -12,7 +12,9 @@ textarea.parsley-error {
   color: #B94A48;
   background-color: #F2DEDE;
   border: 1px solid #EED3D7;
-  display: block;
+  float: left; 
+  clear: both; 
+  /* display: inline-block; */
 }
 
 .parsley-errors-list {
@@ -22,7 +24,9 @@ textarea.parsley-error {
   font-size: 0.9em;
   line-height: 0.9em;
   opacity: 0;
-  display: block;
+  /* display: block; */
+  float: left; 
+  clear: both; 
 
   transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
@@ -32,5 +36,7 @@ textarea.parsley-error {
 
 .parsley-errors-list.filled {
   opacity: 1;
-  display: block;
+  /* display: inline-block; */
+  float: left; 
+  clear: both; 
 }

@@ -50,7 +50,7 @@
                 </div>
                 <div class="form-group">
                     <label for="passwd">Password</label>
-                    <div class="input-group mb-3">
+                    <div class="input-group">
                         <input :type="type" name="password" id="passwd" class="form-control border-right-0" placeholder="Enter Password" required>
                         <div class="input-group-prepend">
                             <button class="btn btn-outline-secondary border-left-0 rounded-right" type="button" @click="showPassword">
