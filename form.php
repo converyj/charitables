@@ -255,7 +255,6 @@ session_start();
             <div class="icons mt-4">
                 <i class="fab fa-twitter pr-2"></i>
                 <i class="fab fa-facebook-f pr-2"></i>
-                <!-- <i class="fab fa-instagram pr-2"></i> -->
             </div>
         </footer>
     </main>
