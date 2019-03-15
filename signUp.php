@@ -45,7 +45,7 @@
             </header>
             <form action="signUp-processing.php" method="POST" class="needs-validation" novalidate>
                 <div class="form-row mt-4">
-                    <div class="btn-group m-auto centerSignUpButtons" data-toggle="buttons">
+                    <div class="btn-group m-auto" data-toggle="buttons">
                         <label class="btn btn-outline-secondary active">
                             <input type="radio" name="rdbRole" id="donor" value="1" checked>Donor
                         </label>
