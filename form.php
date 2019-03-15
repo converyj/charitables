@@ -225,7 +225,7 @@ session_start();
                                 </div> -->
                                 </div>
                                 <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal" @click="addItem(items.name, items.quantity)">Accept</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" @click="addItem()">Accept</button>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>

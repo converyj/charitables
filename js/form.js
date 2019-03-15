@@ -19,7 +19,7 @@ var vm = new Vue({
             // var buttonValue = this.$refs.value;
             // return buttonValue;
         },
-        addItem(name, quantity) {
+        addItem() {
             console.log("in addItem")
             // buttonValue = this.categoryId();
             this.items.push({
@@ -27,6 +27,9 @@ var vm = new Vue({
                 name: this.name,
                 quantity: this.quantity
             });
+
+            this.name = null; 
+            this.quantity = null;
         },
 
         remove(index) {
