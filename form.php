@@ -15,6 +15,8 @@ session_start();
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/media-queries.css" rel="stylesheet">
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link src="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -81,9 +83,9 @@ session_start();
         <section class="container pt-4" id="app">
             <form action="" method="POST">
                 <!-- <div class="form-row mt-4"> -->
-                <ul class="nav nav-tabs-pink">
+                <ul class="nav nav-tabs-pink nav-inline nav-justified">
                     <li class="nav-item">
-                        <a class="nav-link active nav-link-pink aBlack borderGrey" data-toggle="tab" href="#food">Food</a>
+                        <a class="nav-link active nav-link-pink aBlack" data-toggle="tab" href="#food">Food</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#clothes">Clothes</a>
@@ -109,97 +111,108 @@ session_start();
                             <p class="text-center">Tops</p>
                         </div>
                     </div>
-                    <div id="all" class="container tab-pane fade"><br>
+                    <div id="all" class="container tab-pane fade center"><br>
                         <div class="form-row">
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                 <button-value value="fruit" class="justify-content-center"></button-value>
-                                <button type="button" id="cat1" @click="getId" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" id="cat1" @click="getId" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Fruits</label></div>
+
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Veg</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
 
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Vegetables & Legumes</label></div>
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Meat & Seafood</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Meat & Seafood</label></div>                                
 
                             </div>
-                            <div class="form-group col-4">
+                            <!-- PUT STUFF HERE -->
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Dairy</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Dairy</label></div>
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Water & Juice</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Grains</label></div>
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Non-Perishables</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Water & Juice</label></div> 
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Sauce & Condiments</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Eggs & Soy</label></div>
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Grains</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Sauce & Condiments</label></div>
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Baby Food</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Baked Goods & Snacks</label></div>
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Other Beverages</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Baby Food</label></div>
 
                             </div>
-                            <div class="form-group col-4">
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <label :ref="id + '-test'" class="justify-content-center">Eggs & Soy</label>
-                                <button type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
-                                    <img src="fruit.jpg" width="50" height="50" />
-                                </button><br />
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Non-Perishables</label></div>
 
                             </div>
+                            <div class="form-group col-4 col-md-3 col-lg-2">
+                                <!-- call to database (dynamically) -->
+                                <button class="buttonC border-0" type="button" @click="getId(id)" value="veg" data-toggle="modal" data-target="#itemsModal">
+                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                </button>
+                                <div><label :ref="id + '-test'" class="justify-content-center pt-1">Other Beverages</label></div>
 
+                            </div>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -214,10 +227,13 @@ session_start();
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
+                                        <!-- note: should be dynamic -->
+                                        <!-- <div class="pb-2">Fruits</div> -->
+                                        <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
                                         <label for="item">Item</label>
-                                        <input type="text" name="item" class="form-control" v-model="name" id="item" required>
+                                        <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item" required>
                                         <label for="qty">Quantity</label>
-                                        <input type="text" name="qty" class="form-control" v-model="quantity" id="qty" required>
+                                        <input type="text" name="qty" id="widthPop" class="form-control" v-model="quantity" id="qty" required>
                                     </div>
                                     <!-- <div class="form-group" v-for='item in items'>
                                     <label for="qty">Quantity</label>
@@ -225,15 +241,16 @@ session_start();
                                 </div> -->
                                 </div>
                                 <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal" @click="addItem">Accept</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+
+                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal" @click="addItem">Accept</button>
+                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <section id="summary">
                         <div class="form-row" v-for="item, index in items">
-                            <div class="form-group col-4">
+                            <div class="form-group col-8 pb-4">
                                 <label for="items">Item</label>
                                 <input v-model.lazy="item.name" type="text" name="item" class="form-control" id="items">
                                 <!-- <label for="qty">Quantity</label>
@@ -243,12 +260,14 @@ session_start();
                                 <label for=" qty">Quantity</label>
                                 <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control">
                             </div>
-                            <button type="button" @click="remove(index)">
-                                <i class="fas fa-trash-alt"></i>
+                            <button class="border-0" type="button" @click="remove(index)">
+                                <i class="fas fa-trash-alt pb-3"></i>
                             </button>
                         </div>
                     </section>
-                    <input type="submit" @click="parse" value="Confirm" class="btn btn-primary btn-primary2 m-auto mybuttonstyle2" />
+                    <div class="center">
+                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle" />
+                    </div>
             </form>
         </section>
         <footer class="page-footer text-center pb-4">

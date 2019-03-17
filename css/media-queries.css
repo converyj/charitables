@@ -1,0 +1,24 @@
+@media only screen and (min-width: 500px) {
+#widthPop{
+	width: 60%;
+}
+}
+
+/*unsure of this one*/
+@media only screen and (min-width:0px){
+	.col-9{
+		-ms-flex: 0 0 100%;
+  		flex: 0 0 100%;
+  		max-width: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 370px){
+	.col-9{
+		-ms-flex: 0 0 75%;
+  		flex: 0 0 75%;
+  		max-width: 75%;
+	}
+
+}
