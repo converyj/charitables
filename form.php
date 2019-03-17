@@ -250,13 +250,13 @@ session_start();
                     </div>
                     <section id="summary">
                         <div class="form-row" v-for="item, index in items">
-                            <div class="form-group col-8 pb-4">
+                            <div class="form-group col-8 col-md-6 pb-4">
                                 <label for="items">Item</label>
                                 <input v-model.lazy="item.name" type="text" name="item" class="form-control" id="items">
                                 <!-- <label for="qty">Quantity</label>
                             <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control" disabled> -->
                             </div>
-                            <div class="form-group col-2">
+                            <div class="form-group col-2 col-md-2">
                                 <label for=" qty">Quantity</label>
                                 <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control">
                             </div>
