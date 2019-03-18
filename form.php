@@ -2,8 +2,6 @@
 
 session_start();
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +59,7 @@ session_start();
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <img src="" alt="">
+                        <i class="fas fa-bell"></i>
                     </a>
                 </li>
                 <?php 
@@ -102,7 +100,7 @@ session_start();
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id =          'Fruit'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -116,7 +114,7 @@ session_start();
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id =          'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -130,7 +128,7 @@ session_start();
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id =          'Fruit'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -139,7 +137,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'veg', id =          'Vegetable & Legumes'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'veg', id = 'Vegetable & Legumes'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -148,7 +146,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'meat', id =          'Meat & Seafood'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'meat', id = 'Meat & Seafood'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -159,7 +157,7 @@ session_start();
                             <!-- PUT STUFF HERE -->
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                  <!-- call to database (dynamically)  -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'diary', id =          'Diary'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'diary', id = 'Diary'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -168,7 +166,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'grains', id =          'Grains'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'grains', id = 'Grains'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -177,7 +175,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'juice', id =          'Water & Juice'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'juice', id = 'Water & Juice'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -186,7 +184,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'eggs', id =          'Eggs & Soy'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'eggs', id = 'Eggs & Soy'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -195,7 +193,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'condiments', id =          'Sauce & Condiments'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'condiments', id = 'Sauce & Condiments'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -204,7 +202,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'snacks', id =          'Baked Goods & Snacks'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'snacks', id = 'Baked Goods & Snacks'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -213,7 +211,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'baby', id =          'Baby Food'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'baby', id = 'Baby Food'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
@@ -231,7 +229,7 @@ session_start();
                             </div>
                             <div class="form-group col-4 col-md-3 col-lg-2"> 
                                 <!-- call to database (dynamically) -->
-                                 <button type="button" class="buttonC border-0" @click="categoryId = 'beverages', id =          'Other Beverages'" data-toggle="modal" data-target="#itemsModal">
+                                 <button type="button" class="buttonC border-0" @click="categoryId = 'beverages', id = 'Other Beverages'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="fruit.jpg" width="50" height="50" />
                                 </button>
                                 <div>
