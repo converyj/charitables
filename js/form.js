@@ -30,6 +30,8 @@ var vm = new Vue({
             var myObjStr = JSON.stringify(this.items);
 
             console.log(myObjStr)
+
+            return myObjStr;
         }
 
     }
