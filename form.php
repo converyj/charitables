@@ -2,6 +2,20 @@
 
 session_start();
 
+$dsn = "mysql:host=localhost;dbname=browne9_Charitables;charset=utf8mb4";
+$dbusername = "browne9_weedsite";
+$dbpassword = "g@5o4nFUJ7ha";
+
+$pdo = new PDO($dsn, $dbusername, $dbpassword);
+
+$baby = $pdo->prepare("SELECT * FROM `FoodImages` WHERE `id`= 1");
+$fruits = $pdo->prepare("SELECT * FROM `FoodImages` WHERE `id`= 7");
+
+$baby->execute();
+$fruits->execute();
+
+$b = $baby->fetch(); 
+$f = $fruits->fetch(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,10 +115,10 @@ session_start();
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
                                 <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                    <img class="buttonC" src="images/<?php echo($f["images"]); ?> "width="50" height="50" />
                                 </button>
                                 <div>
-                                    <label class="justify-content-center pt-1">Fruit</label>
+                                    <label class="justify-content-center pt-1"><?php echo($f["category"]); ?></label>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +143,7 @@ session_start();
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
                                 <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                    <img class="buttonC" src="images/<?php echo($f["images"]); ?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Fruit</label>
@@ -212,7 +226,7 @@ session_start();
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                 <button type="button" class="buttonC border-0" @click="categoryId = 'baby', id = 'Baby Food'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
+                                    <img class="buttonC" src="images/<?php echo($b["images"]); ?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Baby Food</label>
