@@ -7,7 +7,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Dashboard | Charitables</title>
+    <title> Chat | Charitables</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
@@ -81,62 +81,17 @@ session_start();
         </div>
     </nav>
     <main>
-        <section class="container" id="app">
-        <div class="d-flex flex-lg-column flex-sm-row float-md-left mr-4 mb-4 justify-content-center">
-                <button type="button" class="list-group-item list-group-item-action">
-                    Form
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">Offers</button>
-                <button type="button" class="list-group-item list-group-item-action active">Dashboard</button>
+        <section class="container text-center" id="app">
+            <p class="lead">Request Recieved</p>
+            <h1>You are now connected</h2>
+            <div class="mt-5">
+            <button type="button" class="col-9 col-md-4 col-sm-8 btn mybuttonstyle mb-5">
+                <a href="mailto:" + email>Email</a>
+            </button>
+            <button type="button" class="col-9 col-md-4 col-sm-8 btn mybuttonstyle float-md-left">
+                <a href="offers.php">Offers</a>
+            </button>
         </div>
-        <ul class="nav nav-tabs-pink nav-inline nav-justified">
-            <li class="nav-item">
-                <a class="nav-link active nav-link-pink aBlack" data-toggle="tab" href="#donor">Donor</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#recipient">Recipient</a>
-            </li>
-        </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div id="donor" class="container tab-pane active center"><br>
-                    <div class="list-group-horizontal">
-                        <!-- call to database (dynamically) -->
-                        <button id="entry" type="button" class="list-group-item list-group-item-action">
-                            <a href="chatlist.php">
-                                <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                                <h3 class="text-left">John Doe</h3>
-                                <p class="text-left">Fruit</p>
-                                <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
-                            </a>
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
-                    </div>
-                </div>
-                <div id="recipient" class="container tab-pane fade center"><br>
-                    <div class="list-group">
-                        <!-- call to database (dynamically) -->
-                        <button type="button" class="list-group-item list-group-item-action active">
-                            Cras justo odio
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
-                    </div>
-                </div>
-            </div>
             
         </section>
         <footer class="page-footer text-center pb-4">
