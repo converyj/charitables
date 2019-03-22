@@ -6,7 +6,8 @@ var vm = new Vue({
         quantity: '',
         categoryId: '',
         category: '',
-        id: ''
+        id: '',
+        image: ''
     },
 
 
