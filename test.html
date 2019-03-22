@@ -22,23 +22,24 @@
          <h3>Luzon city</h3>
          <div id = "My">
          <p>The largest and most populous of the Philippine islands, Luzon will likely be your first destination during a trip to the Philippines. The capital city, Manila, is home to a vibrant food and arts scene and landmarks such as the walled city of Intramuros, which recalls the country’s Spanish colonial past. Head north on the island and you’ll find 2,000-year-old rice terraces carved into lush green mountainsides.</p>
-         </div>
+         
 
          <div id="xyz"  class="collapse">
          <p>Head to Cagban Beach for a secluded afternoon, or White Beach when you're ready for the island's nightlife scene.</p>
          </div>
          <button  id="Mybutton1" class="btn btn-primary" data-toggle="collapse" data-target="#Mybutton1">View Full Article</button>
-       </div>
+        </div>
+  </div>
 
        <script>
         var clientHeight = document.getElementById('My').clientHeight;
         console.log(clientHeight);
-        if(clientHeight<=216){
+        if(clientHeight==140){
           console.log(clientHeight);
           document.getElementById('xyz').style.display = "none";
           document.getElementById('xyz').style.visibility = "hidden";
         }
-        else if(clientHeight>340){
+        else if(clientHeight==150){
           console.log("greater");
           document.getElementById('xyz').style.display = 'block';
           document.getElementById('xyz').style.display = 'initial';

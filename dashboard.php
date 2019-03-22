@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -20,7 +20,38 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<style>
 
+/* ul {
+	height: 100px;
+} */
+.content {
+	height: 3em;
+}
+.hideContent {
+    overflow: hidden;
+    /* line-height: 1em; */
+	height: 3em !important;
+}
+
+.showContent {
+	overflow: default;
+    line-height: 1em;
+    height: auto;
+}
+
+h1 {
+    font-size: 24px;
+}
+p {
+    padding: 10px 0;
+}
+#Mybutton1 {
+    padding: 10px 0;
+    text-align: center;
+}
+
+</style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand h1" href="home.html">Charitables</a>
@@ -38,7 +69,7 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
                 </li>
-                <?php 
+                <?php
             }
             ?>
                 <li class="nav-item">
@@ -65,7 +96,7 @@ session_start();
                         <i class="fas fa-bell"></i>
                     </a>
                 </li>
-                <?php 
+                <?php
             } else {
                 ?>
                 <li class="nav-item">
@@ -74,7 +105,7 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="signUp.php">Sign Up</a>
                 </li>
-                <?php 
+                <?php
             }
             ?>
             </ul>
@@ -102,26 +133,42 @@ session_start();
                 <div id="donor" class="container tab-pane active center"><br>
                     <div class="list-group-horizontal">
                         <!-- call to database (dynamically) -->
-                        <button id="entry" type="button" class="list-group-item list-group-item-action">
-                            <a href="chatlist.php">
-                                <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
+				    <div class="list-group-item list-group-item-action hideContent content">
+                            <!-- <a href="chatlist.php"> -->
+                                <!-- <img class="buttonCA" src="fruit.jpg" alt="profile" width="100" height="100" /> -->
                                 <h3 class="text-left">John Doe</h3>
-                                <p class="text-left">Fruit</p>
-                                <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
-                            </a>
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros
-                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
-                        </button>
+                            		<!-- <div class="text-left content hideContent float-left"> -->
+							<div class="details text-left float-left">
+								  <ul>
+		                                    <li>Fruits</li>
+		                                    <li>Fruits</li>
+		                                    <li>Fruits</li>
+		                                    <li>Fruits</li>
+		                                    <li>Fruits</li>
+		                                    <li>Fruits</li>
+		                                </ul>
+                            		</div>
+	                            <div class="float-right justify-content-center">
+	                                <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
+	                            </div>
+                            <!-- </a> -->
+				   	</div>
+                            <!-- <div> -->
+	                                <button id="Mybutton1" class="btn btn-primary" data-toggle="collapse" >View More</button>
+	                            <!-- </div> -->
+	                        <!-- </button>
+	                        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in
+	                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
+	                        </button>
+	                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus
+	                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
+	                        </button>
+	                        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac
+	                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
+	                        </button>
+	                        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros
+	                            <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
+	                        </button> -->
                     </div>
                 </div>
                 <div id="recipient" class="container tab-pane fade center"><br>
@@ -137,7 +184,7 @@ session_start();
                     </div>
                 </div>
             </div>
-            
+
         </section>
         <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
@@ -147,12 +194,34 @@ session_start();
         </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/form.js"></script>
+    <script src="js/dashboard.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+         $("#Mybutton1").on("click", function() {
+    var $this = $(this);
+    // var $content = $this.parent().prev("div.content");
+    var linkText = $this.text().toUpperCase();
+
+    if(linkText === "VIEW MORE"){
+        console.log(linkText)
+        linkText = "View less";
+        $(".content").addClass("showContent");
+    } else {
+        console.log(linkText)
+
+        linkText = "View more";
+        $(".content").removeClass("showContent");
+
+    };
+
+    $this.text(linkText);
+});
+    </script>
 </body>
 
-</html> 
+</html>
