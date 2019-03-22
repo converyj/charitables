@@ -32,7 +32,14 @@ var vm = new Vue({
 
             console.log(myObjStr)
 
-            return myObjStr;
+            $.ajax({  
+                type: 'POST',  
+                url: 'form-processing.php', 
+                data: myObjStr,
+                success: function(response) {
+                    console.log(response);
+                }
+            });
         }
 
     }

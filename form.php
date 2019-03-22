@@ -34,6 +34,9 @@ include 'images.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand h1" href="home.html">Charitables</a>
+        <a class="nav-link navbar-right" href="#">
+            <i class="fas fa-bell"></i>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -66,11 +69,6 @@ include 'images.php';
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-bell"></i>
-                    </a>
                 </li>
                 <?php 
             } else {
@@ -598,17 +596,17 @@ include 'images.php';
                             </button>
                         </div>
                     </section>
-                    <div class="center">
-                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle" />
+                    <div class="center pt-4">
+                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle btn-lg pt-3 pb-3" />
                     </div>
             </form>
         </section>
-        <footer class="page-footer text-center pb-4">
+<!--         <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
                 <i class="fab fa-twitter pr-2"></i>
                 <i class="fab fa-facebook-f pr-2"></i>
             </div>
-        </footer>
+        </footer> -->
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/form.js"></script>
