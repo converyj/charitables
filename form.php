@@ -11,17 +11,17 @@ $stmt->execute();
 $stmt2 = $pdo->prepare("SELECT * FROM `ClothesImages`");
 $stmt2->execute();
 
-$stmt3 = $pdo->prepare("SELECT * FROM `FoodImages`");
+$stmt3 = $pdo->prepare("SELECT * FROM `FoodImages` UNION ALL SELECT * FROM `ClothesImages`");
 $stmt3->execute();
 
-$stmt4 = $pdo->prepare("SELECT * FROM `ClothesImages`");
+$stmt4 = $pdo->prepare("SELECT * FROM `FoodImages` UNION ALL SELECT * FROM `ClothesImages`");
 $stmt4->execute();
-
-$stmt5 = $pdo->prepare("SELECT * FROM `ClothesImages`");
-$stmt5->execute();
-
-$stmt6 = $pdo->prepare("SELECT * FROM `FoodImages`");
-$stmt6->execute();
+//
+// $stmt5 = $pdo->prepare("SELECT * FROM `ClothesImages`");
+// $stmt5->execute();
+//
+// $stmt6 = $pdo->prepare("SELECT * FROM `FoodImages`");
+// $stmt6->execute();
 
 include 'images.php';
 ?>
@@ -174,35 +174,21 @@ include 'images.php';
                               <div>
                                   <label class="justify-content-center pt-1"><?php echo($row3["category"]);?></label>
                               </div>
+                            </div>
 
-                        </div>
-                        <?php
-                      }
-                        ?>
-                        <?php
-                        while($row4 = $stmt4 ->fetch() )
-                        {
-                        ?>
-                          <div class="form-group col-4 col-md-3 col-lg-2">
-                        <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo($row4["categoryId"]);?>', id = '<?php echo($row4["name"]);?>'" data-toggle="modal" data-target="#<?php echo($row4["Modal"]);?>">
-                            <img class="buttonC" src="clothesImages/<?php echo($row4["images"]);?>" width="50" height="50" />
-                        </button>
-                        <div>
-                            <label class="justify-content-center pt-1"><?php echo($row4["category"]);?></label>
-                        </div>
 
-                                  </div>
                         <?php
                       }
                         ?>
                         </div>
                     </div>
+
                     <!-- Modal -->
                     <?php
-                    while($row5 = $stmt5 ->fetch() )
+                    while($row4 = $stmt4 ->fetch() )
                     {
                     ?>
-                    <div class="modal fade" id="<?php echo($row5["Modal"]);?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="<?php echo($row4["Modal"]);?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -213,7 +199,7 @@ include 'images.php';
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <img class="buttonCA" src="clothesImages/<?php echo($row5["images"]);?>" width="100" height="100" />
+                                        <img class="buttonCA" src="images/<?php echo($row4["images"]);?>" width="100" height="100" />
                                         <label for="item">Item</label>
                                         <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
                                         <label for="qty">Quantity</label>
@@ -230,38 +216,8 @@ include 'images.php';
                     <?php
                   }
                     ?>
-                    <?php
-                    while($row6 = $stmt6 ->fetch() )
-                    {
-                    ?>
-                    <div class="modal fade" id="<?php echo($row6["Modal"]);?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">{{id}}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <img class="buttonCA" src="images/<?php echo($row6["images"]);?>" width="100" height="100" />
-                                        <label for="item">Item</label>
-                                        <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
-                                        <label for="qty">Quantity</label>
-                                        <input type="text" name="qty" id="widthPop" class="form-control" v-model="quantity" id="qty">
-                                    </div>
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal" @click="addItem">Accept</button>
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                  }
-                    ?>
+
+
                     <section id="summary">
                         <div class="form-row" v-for="item, index in items">
                             <div class="form-group col-8 col-md-6 pb-4">
