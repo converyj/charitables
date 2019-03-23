@@ -17,6 +17,12 @@ $stmt3->execute();
 $stmt4 = $pdo->prepare("SELECT * FROM `ClothesImages`");
 $stmt4->execute();
 
+$stmt5 = $pdo->prepare("SELECT * FROM `ClothesImages`");
+$stmt5->execute();
+
+$stmt6 = $pdo->prepare("SELECT * FROM `FoodImages`");
+$stmt6->execute();
+
 include 'images.php';
 ?>
 <!DOCTYPE html>
@@ -192,7 +198,11 @@ include 'images.php';
                         </div>
                     </div>
                     <!-- Modal -->
-                    <div class="modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <?php
+                    while($row5 = $stmt5 ->fetch() )
+                    {
+                    ?>
+                    <div class="modal fade" id="<?php echo($row5["Modal"]);?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -203,7 +213,7 @@ include 'images.php';
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <img class="buttonCA" src="images/Fruits.JPG" width="100" height="100" />
+                                        <img class="buttonCA" src="clothesImages/<?php echo($row5["images"]);?>" width="100" height="100" />
                                         <label for="item">Item</label>
                                         <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
                                         <label for="qty">Quantity</label>
@@ -217,7 +227,14 @@ include 'images.php';
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="itemsModal2" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <?php
+                  }
+                    ?>
+                    <?php
+                    while($row6 = $stmt6 ->fetch() )
+                    {
+                    ?>
+                    <div class="modal fade" id="<?php echo($row6["Modal"]);?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -228,7 +245,7 @@ include 'images.php';
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <img class="buttonCA" src="images/<?php echo($ve["images"]); ?>" width="100" height="100" />
+                                        <img class="buttonCA" src="images/<?php echo($row6["images"]);?>" width="100" height="100" />
                                         <label for="item">Item</label>
                                         <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
                                         <label for="qty">Quantity</label>
@@ -242,56 +259,9 @@ include 'images.php';
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="itemsModal3" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">{{id}}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <img class="buttonCA" src="images/<?php echo($m["images"]); ?>" width="100" height="100" />
-                                        <label for="item">Item</label>
-                                        <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
-                                        <label for="qty">Quantity</label>
-                                        <input type="text" name="qty" id="widthPop" class="form-control" v-model="quantity" id="qty">
-                                    </div>
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal" @click="addItem">Accept</button>
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="itemsModal4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">{{id}}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <img class="buttonCA" src="images/<?php echo($d["images"]); ?>" width="100" height="100" />
-                                        <label for="item">Item</label>
-                                        <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
-                                        <label for="qty">Quantity</label>
-                                        <input type="text" name="qty" id="widthPop" class="form-control" v-model="quantity" id="qty">
-                                    </div>
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal" @click="addItem">Accept</button>
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                  }
+                    ?>
                     <section id="summary">
                         <div class="form-row" v-for="item, index in items">
                             <div class="form-group col-8 col-md-6 pb-4">
