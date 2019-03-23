@@ -46,15 +46,15 @@ include 'images.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
        <a class="navbar-brand h1" href="home.html">Charitables</a>
-       <div>
-
+<div>
+            <a class="float-left nav-link navbar-right" href="#">
+               <i class="fas fa-bell"></i>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="float-right nav-link navbar-right" href="#">
-               <i class="fas fa-bell"></i>
-            </a>
-       </div>
+</div>
+
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
