@@ -1,16 +1,11 @@
-<?php 
-
+<?php
 session_start();
-
 $dsn = "mysql:host=localhost;dbname=browne9_Charitables;charset=utf8mb4";
 $dbusername = "browne9_weedsite";
 $dbpassword = "g@5o4nFUJ7ha";
-
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
-
 $stmt = $pdo->prepare("SELECT * FROM `FoodImages`");
 $stmt->execute();
-
 include 'images.php';
 ?>
 <!DOCTYPE html>
@@ -48,7 +43,7 @@ include 'images.php';
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
                 </li>
-                <?php 
+                <?php
             }
             ?>
                 <li class="nav-item">
@@ -70,7 +65,7 @@ include 'images.php';
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </li>
-                <?php 
+                <?php
             } else {
                 ?>
                 <li class="nav-item">
@@ -79,7 +74,7 @@ include 'images.php';
                 <li class="nav-item">
                     <a class="nav-link" href="signUp.php">Sign Up</a>
                 </li>
-                <?php 
+                <?php
             }
             ?>
             </ul>
@@ -105,201 +100,99 @@ include 'images.php';
                 <div class="tab-content">
                     <div id="food" class="container tab-pane active center"><br>
                         <div class="form-row">
-                            
+                          <?php
+                          while($row = $stmt ->fetch() )
+                          {
+                          ?>
+                          <div class="form-group col-4 col-md-3 col-lg-2">
+                              <!-- call to database (dynamically) -->
+                               <!-- replace values of categoryId, id, src, label with values from the database   -->
+                              <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                  <img class="buttonC" src="images/<?php echo($row["images"]);?>" width="50" height="50" />
+                              </button>
+                              <div>
+                                  <label class="justify-content-center pt-1"><?php echo($row["category"]);?></label>
+                              </div>
+
+                        </div>
+                        <?php
+                      }
+                        ?>
+                    </div>
+                  </div>
+                    <!----------------------------------------------------------------------------------------------------------------------------------->
+                    <div id="clothes" class="container tab-pane fade center"><br>
+                        <div class="form-row">
                             <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($f["images"]); ?> "width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1"><?php echo($f["category"]); ?></label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'veg', id = 'Vegetable & Legumes'" data-toggle="modal" data-target="#itemsModal2">
-                                    <img class="buttonC" src="images/<?php echo($ve["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Vegetables & Legumes</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'meat', id = 'Meat & Seafood'" data-toggle="modal" data-target="#itemsModal3">
-                                    <img class="buttonC" src="images/<?php echo($m["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Meat & Seafood</label>
-                                </div>                                
-
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                 <!-- call to database (dynamically)  -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'diary', id = 'Diary'" data-toggle="modal" data-target="#itemsModal4">
-                                    <img class="buttonC" src="images/<?php echo($d["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Diary</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'grains', id = 'Grains'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($g["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Grains</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'juice', id = 'Water & Juice'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($wa["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Water & Juice</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'eggs', id = 'Eggs & Soy'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($e["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Eggs & Soy</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'condiments', id = 'Sauce & Condiments'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($c["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Sauce & Condiments</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'snacks', id = 'Baked Goods & Snacks'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($sna["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Baked Goods & Snacks</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'baby', id = 'Baby Food'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($b["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Baby Food</label>
-                                </div>
-                            </div>
-
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'non-perishables', id = 'Non-Perishables'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($non["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Non-Perishables</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">  -->
-                                <!-- call to database (dynamically) -->
-                                 <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'beverages', id = 'Other Beverages'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($other["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Other Beverages</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!----------------------------------------------------------------------------------------------------------------------------------->
-                    <!-- <div id="clothes" class="container tab-pane fade center"><br>
-                        <div class="form-row">
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
-                                <!-- call to database (dynamically) -->
-                                 <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="clothesImages/<?php echo($tops["images"]);?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Tops</label>
                                 </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="clothesImages/<?php echo($bots["images"]);?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Bottoms</label>
                                 </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="clothesImages/<?php echo($acc["images"]);?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Accessories</label>
                                 </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="clothesImages/<?php echo($out["images"]);?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Outerwears</label>
                                 </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="clothesImages/<?php echo($in["images"]);?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Innerwears</label>
                                 </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="clothesImages/<?php echo($one["images"]);?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">One piece</label>
                                 </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> -->
+                            <div class="form-group col-4 col-md-3 col-lg-2">
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <!-- <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
+                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="clothesImages/<?php echo($shoe["images"]);?>" width="50" height="50" />
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Shoes</label>
                                 </div>
-                            </div> -->
-                            <?php 
-                            while($row = $stmt->fetch())
-                            {
-                            ?>
-
-                            <?php
-                            }
-                            ?>
+                            </div>
                         </div>
                     </div>
                     <!-------------------------------------------------------------------------------------------------------------------------------->
@@ -309,7 +202,7 @@ include 'images.php';
                                 <!-- call to database (dynamically) -->
                                  <!-- replace values of categoryId, id, src, label with values from the database   -->
                                 <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($f["images"]); ?>" 
+                                    <img class="buttonC" src="images/<?php echo($f["images"]); ?>"
                                      />
 
                                 <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit', image='Fruits.JPG'" data-toggle="modal" data-target="#itemsModal">
@@ -335,7 +228,7 @@ include 'images.php';
                                 </button>
                                 <div>
                                     <label class="justify-content-center pt-1">Meat & Seafood</label>
-                                </div>                                
+                                </div>
 
                             </div>
                             <!-- PUT STUFF HERE -->
@@ -411,7 +304,7 @@ include 'images.php';
                                     <label class="justify-content-center pt-1">Non-Perishables</label>
                                 </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-3"> 
+                            <div class="form-group col-4 col-md-3 col-lg-3">
                                 <!-- call to database (dynamically) -->
                                  <button type="button" class="buttonC border-0" @click="categoryId = 'beverages', id = 'Other Beverages'" data-toggle="modal" data-target="#itemsModal">
                                     <img class="buttonC" src="images/<?php echo($other["images"]); ?>" width="50" height="50" />
@@ -629,4 +522,4 @@ include 'images.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
-</html> 
+</html>
