@@ -1,49 +1,31 @@
 var vm = new Vue({
     el: '#app',
     data: {
-        isHidden: true
+        isHidden: true,
+        isShown: false,
+        text: "View More"
     },
 
 
     methods: {
         hideShow() {
-            $("#Mybutton1").on("click", function() {
-                var $this = $(this); 
-                // var $content = $this.parent().prev("div.content");
-                var linkText = $this.text().toUpperCase();    
-                
-                if(linkText === "VIEW MORE"){
-                    linkText = "View less";
-                    $(".content").addClass("showContent");
-                } else {
-                    linkText = "View more";
-                    $("content").removeClass("showContent");
-                };
-            
-                $this.text(linkText);
-            });
+            console.log("in")
+            // $("#Mybutton1").on("click", function() {
+            // var $this = $(this); 
+            // var $content = $this.parent().prev("div.content");
+            this.text = this.text.toUpperCase();
 
-        // remove(index) {
-        //     this.$delete(this.items, index);
-        // },
-
-        // parse() {
-        //     var myObjStr = JSON.stringify(this.items);
-
-        //     console.log(myObjStr)
-
-        //     $.ajax({  
-        //         type: 'POST',  
-        //         url: 'form-processing.php', 
-        //         data: myObjStr,
-        //         success: function(response) {
-        //             console.log(response);
-        //         }
-        //     });
-        // }
-
+            if (this.text === "VIEW MORE") {
+                this.text = "View Less";
+                this.isHidden = false;
+                this.isShown = true;
+            } else {
+                this.text = "View More";
+                this.isHidden = true;
+                this.isShown = false;
+            };
+        }
     }
-}
 
 });
 

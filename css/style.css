@@ -152,3 +152,24 @@ display: none;
 }
 */
 
+/* Dashboard Styles */
+
+.hideContent {
+		overflow: hidden;
+		height: 3em;
+}
+
+.showContent {
+		height: auto;
+}
+
+#Mybutton1 {
+		padding: 10px 0;
+		text-align: center;
+}
+
+#view-more {
+		clear: both;
+}
+
+
