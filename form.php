@@ -213,7 +213,7 @@ include 'images.php';
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <img class="buttonCA" src="clothesImages/<?php echo($row5["images"]);?>" width="100" height="100" />
+                                        <img class="buttonCA" src="clothesImages/<?php echo($row5["images"]);?>" />
                                         <label for="item">Item</label>
                                         <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
                                         <label for="qty">Quantity</label>
