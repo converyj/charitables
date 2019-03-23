@@ -45,13 +45,17 @@ include 'images.php';
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand h1" href="home.html">Charitables</a>
-        <a class="nav-link navbar-right" href="#">
-            <i class="fas fa-bell"></i>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+       <a class="navbar-brand h1" href="home.html">Charitables</a>
+       <div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="float-right nav-link navbar-right" href="#">
+               <i class="fas fa-bell"></i>
+            </a>
+       </div>
+
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <?php
@@ -220,11 +224,11 @@ include 'images.php';
 
                     <section id="summary">
                         <div class="form-row" v-for="item, index in items">
-                            <div class="form-group col-8 col-md-6 pb-4">
+                            <div class="form-group col-7 col-md-6 pb-4">
                                 <label for="items">Item</label>
                                 <input v-model.lazy="item.name" type="text" name="item" class="form-control" id="items">
                             </div>
-                            <div class="form-group col-2 col-md-2">
+                            <div class="form-group col-3 col-md-2">
                                 <label for=" qty">Quantity</label>
                                 <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control">
                             </div>
@@ -233,8 +237,8 @@ include 'images.php';
                             </button>
                         </div>
                     </section>
-                    <div class="center pt-4">
-                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle btn-lg pt-3 pb-3" />
+                    <div class="center pt-4 pb-4">
+                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle pt-3 pb-3" />
                     </div>
             </form>
         </section>
