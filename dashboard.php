@@ -25,12 +25,20 @@ session_start();
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand h1" href="home.html">Charitables</a>
-        <a class="nav-link" href="#">
-            <i class="fas fa-bell"></i>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <?php
+            if (isset($_SESSION['role'])) {
+            ?>
+                <a class="d-flex justify-content-end float-right nav-link navbar-right" href="#">
+                    <i class="fas fa-bell"></i>
+                </a>
+            <?php
+            } 
+            ?>
+        </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <?php
@@ -88,10 +96,14 @@ session_start();
         <section class="container" id="app">
             <div class="d-flex mr-4 mb-4 mt-4 justify-content-center">
                 <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
-                    Form
+                    <a href="form.php"  class="aBlack">Form</a>
                 </button>
-                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">Offers</button>
-                <button type="button" class="list-group-item list-group-item-action active btn-outline-secondary">Dashboard</button>
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
+                    <a href="dashboard.php" class="aBlack">Dashboard</a>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action active btn-outline-secondary" id="hoverWhite">
+                    <a href="offer.php" class="aBlack">Offers</a>                
+                </button>
             </div>
             <ul class="nav nav-tabs-pink nav-inline nav-justified">
                 <li class="nav-item">
