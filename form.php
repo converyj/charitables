@@ -222,9 +222,9 @@ include 'images.php';
                     ?>
 
 
-                    <section id="summary">
+                    <section id="summary" class="pb-4">
                         <div class="form-row" v-for="item, index in items">
-                            <div class="form-group col-7 col-md-6 pb-4">
+                            <div class="form-group col-7 col-md-6">
                                 <label for="items">Item</label>
                                 <input v-model.lazy="item.name" type="text" name="item" class="form-control" id="items">
                             </div>
