@@ -7,12 +7,14 @@ var vm = new Vue({
         categoryId: '',
         category: '',
         id: '',
-        image: ''
+        image: '',
+        seen: false
     },
 
 
     methods: {
         addItem() {
+            this.seen = true;
             this.items.push({
                 category: this.categoryId,
                 name: this.name,
@@ -30,19 +32,15 @@ var vm = new Vue({
         parse() {
             var myObjStr = JSON.stringify(this.items);
 
-            console.log(myObjStr)
-
-            $.ajax({  
-                type: 'POST',  
-                url: 'form-processing.php', 
+            $.ajax({
+                type: 'POST',
+                url: 'form-processing.php',
                 data: myObjStr,
-                success: function(response) {
+                success: function (response) {
                     console.log(response);
                 }
             });
         }
-
     }
-
 });
 

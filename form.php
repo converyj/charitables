@@ -36,7 +36,6 @@ include 'images.php';
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media-queries.css" rel="stylesheet">
-
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link src="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -46,23 +45,31 @@ include 'images.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand h1" href="home.html">Charitables</a>
-        <a class="nav-link navbar-right" href="#">
-            <i class="fas fa-bell"></i>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <?php
+            if (isset($_SESSION['role'])) {
+            ?>
+                <a class="d-flex justify-content-end float-right nav-link navbar-right" href="#">
+                    <i class="fas fa-bell"></i>
+                </a>
+            <?php
+            } 
+            ?>
+        </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <?php
                 if (isset($_SESSION['role'])) {
-                    ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="dashboard.php">Dashboard</a>
-                </li>
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
+                    </li>
                 <?php
-            }
-            ?>
+                }
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="donate.php">Support Us</a>
                 </li>
@@ -71,29 +78,29 @@ include 'images.php';
                 </li>
                 <?php
                 if (isset($_SESSION['role'])) {
-                    ?>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Profile
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Edit Account</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                </li>
-                <?php
-            } else {
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signUp.php">Sign Up</a>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Edit Account</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </li>
                 <?php
-            }
-            ?>
+                } else {
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signUp.php">Sign Up</a>
+                    </li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
     </nav>
@@ -112,120 +119,108 @@ include 'images.php';
                         <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#all">All</a>
                     </li>
                 </ul>
-            <!-- </div> -->
+                <!-- </div> -->
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div id="food" class="container tab-pane active center"><br>
                         <div class="form-row">
-                          <?php
-                          while($row = $stmt ->fetch() )
-                          {
-                          ?>
-                          <div class="form-group col-4 col-md-3 col-lg-2">
-                              <!-- call to database (dynamically) -->
-                               <!-- replace values of categoryId, id, src, label with values from the database   -->
-                              <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo($row["categoryId"]);?>', id = '<?php echo($row["name"]);?>'" data-toggle="modal" data-target="#<?php echo($row["Modal"]);?>">
-                                  <img class="buttonC" src="images/<?php echo($row["images"]);?>" width="50" height="50" />
-                              </button>
-                              <div>
-                                  <label class="justify-content-center pt-1"><?php echo($row["category"]);?></label>
-                              </div>
-
+                            <?php
+                            while ($row = $stmt->fetch()) {
+                            ?>
+                                <div class="form-group col-4 col-md-3 col-lg-2">
+                                    <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo ($row["id"]); ?><?php echo ($row["type"]); ?>'" data-toggle="modal" data-target="#<?php echo ($row["id"]); ?><?php echo ($row["type"]); ?>">
+                                        <img class="buttonC" src="images/<?php echo ($row["images"]); ?>" width="50" height="50" />
+                                    </button>
+                                    <div>
+                                        <label class="justify-content-center pt-1"><?php echo ($row["category"]); ?></label>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
-                        <?php
-                      }
-                        ?>
                     </div>
-                  </div>
                     <!----------------------------------------------------------------------------------------------------------------------------------->
                     <div id="clothes" class="container tab-pane fade center"><br>
                         <div class="form-row">
-                          <?php
-                          while($row2 = $stmt2 ->fetch() )
-                          {
-                          ?>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                          <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo($row2["categoryId"]);?>', id = '<?php echo($row2["name"]);?>'" data-toggle="modal" data-target="#<?php echo($row2["Modal"]);?>">
-                              <img class="buttonC" src="clothesImages/<?php echo($row2["images"]);?>" width="50" height="50" />
-                          </button>
-                          <div>
-                              <label class="justify-content-center pt-1"><?php echo($row2["category"]);?></label>
-                          </div>
-
+                            <?php
+                            while ($row2 = $stmt2->fetch()) {
+                            ?>
+                                <div class="form-group col-4 col-md-3 col-lg-2">
+                                    <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo ($row2["id"]); ?><?php echo ($row2["type"]); ?>'" data-toggle="modal" data-target="#<?php echo ($row2["id"]); ?><?php echo ($row2["type"]); ?>">
+                                        <img class="buttonC" src="clothesImages/<?php echo ($row2["images"]); ?>" width="50" height="50" />
+                                    </button>
+                                    <div>
+                                        <label class="justify-content-center pt-1"><?php echo ($row2["category"]); ?></label>
                                     </div>
-                          <?php
-                        }
-                          ?>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     <!-------------------------------------------------------------------------------------------------------------------------------->
                     <div id="all" class="container tab-pane fade center"><br>
                         <div class="form-row">
-                          <?php
-                          while($row3 = $stmt3 ->fetch() )
-                          {
-                          ?>
-                          <div class="form-group col-4 col-md-3 col-lg-2">
-                              <!-- call to database (dynamically) -->
-                               <!-- replace values of categoryId, id, src, label with values from the database   -->
-                              <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo($row3["categoryId"]);?>', id = '<?php echo($row3["name"]);?>'" data-toggle="modal" data-target="#<?php echo($row3["Modal"]);?>">
-                                  <img class="buttonC" src="images/<?php echo($row3["images"]);?>" width="50" height="50" />
-                              </button>
-                              <div>
-                                  <label class="justify-content-center pt-1"><?php echo($row3["category"]);?></label>
-                              </div>
-                            </div>
-
-
-                        <?php
-                      }
-                        ?>
+                            <?php
+                            while ($row3 = $stmt3->fetch()) {
+                            ?>
+                                <div class="form-group col-4 col-md-3 col-lg-2">
+                                    <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo ($row3["id"]); ?><?php echo ($row3["type"]); ?>'" data-toggle="modal" data-target="#<?php echo ($row3["id"]); ?><?php echo ($row3["type"]); ?>">
+                                        <img class="buttonC" src="images/<?php echo ($row3["images"]); ?>" width="50" height="50" />
+                                    </button>
+                                    <div>
+                                        <label class="justify-content-center pt-1"><?php echo ($row3["category"]); ?></label>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
 
                     <!-- Modal -->
                     <?php
-                    while($row4 = $stmt4 ->fetch() )
-                    {
+                    while ($row4 = $stmt4->fetch()) {
                     ?>
-                    <div class="modal fade" id="<?php echo($row4["Modal"]);?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">{{id}}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <img class="buttonCA" src="images/<?php echo($row4["images"]);?>" width="100" height="100" />
-                                        <label for="item">Item</label>
-                                        <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
-                                        <label for="qty">Quantity</label>
-                                        <input type="text" name="qty" id="widthPop" class="form-control" v-model="quantity" id="qty">
+                        <div class="modal fade" id="<?php echo ($row4["id"]); ?><?php echo ($row4["type"]); ?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel"><?php echo ($row4["category"]); ?></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal" @click="addItem">Accept</button>
-                                    <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal">Cancel</button>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <img class="buttonCA" src="images/<?php echo ($row4["images"]); ?>" width="100" height="100" />
+                                            <label for="item">Item</label>
+                                            <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
+                                            <label for="qty">Quantity</label>
+                                            <input type="text" name="qty" id="widthPop" class="form-control" v-model="quantity" id="qty">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer justify-content-center">
+                                        <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal" @click="addItem">Accept</button>
+                                        <button type="button" class="btn btn-primary mybuttonstyle" data-dismiss="modal">Cancel</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php
-                  }
+                    }
                     ?>
-
-
-                    <section id="summary">
+                    <section v-show="seen" class="pb-4 container">
+                        <div class="row">
+                            <h6 class="h6 col-7 col-md-6" for="items">Item</h6>
+                            <h6 class="col-3 col-md-2" for="qty">Quantity</h6>
+                        </div>
                         <div class="form-row" v-for="item, index in items">
-                            <div class="form-group col-8 col-md-6 pb-4">
-                                <label for="items">Item</label>
+                            <div class="form-group col-7 col-md-6">
                                 <input v-model.lazy="item.name" type="text" name="item" class="form-control" id="items">
                             </div>
-                            <div class="form-group col-2 col-md-2">
-                                <label for=" qty">Quantity</label>
+                            <div class="form-group col-3 col-md-2">
                                 <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control">
                             </div>
                             <button class="border-0" type="button" @click="remove(index)">
@@ -233,12 +228,12 @@ include 'images.php';
                             </button>
                         </div>
                     </section>
-                    <div class="center pt-4">
-                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle btn-lg pt-3 pb-3" />
+                    <div class="center pt-4 pb-4">
+                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle pt-3 pb-3" />
                     </div>
             </form>
         </section>
-<!--         <footer class="page-footer text-center pb-4">
+        <!--         <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
                 <i class="fab fa-twitter pr-2"></i>
                 <i class="fab fa-facebook-f pr-2"></i>
@@ -254,4 +249,4 @@ include 'images.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> 

@@ -1,3 +1,4 @@
+
 .ca{
   text-align: center;
 }
@@ -65,7 +66,10 @@
 }
 /*changed sign up hovers to blue*/
 
-
+/*doesnt work*/
+#hoverWhite:hover{
+	color:#fff;
+}
 
 /*SIGN UP
 .centerSignUpButtons{

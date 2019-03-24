@@ -9,10 +9,6 @@ var vm = new Vue({
 
     methods: {
         hideShow() {
-            console.log("in")
-            // $("#Mybutton1").on("click", function() {
-            // var $this = $(this); 
-            // var $content = $this.parent().prev("div.content");
             this.text = this.text.toUpperCase();
 
             if (this.text === "VIEW MORE") {

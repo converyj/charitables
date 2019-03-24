@@ -25,12 +25,21 @@ session_start();
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand h1" href="home.html">Charitables</a>
-        <a class="nav-link" href="#">
-            <i class="fas fa-bell"></i>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <?php
+            if (isset($_SESSION['role'])) {
+                ?>
+            <a class="d-flex justify-content-end float-right nav-link navbar-right" href="#">
+                <i class="fas fa-bell"></i>
+            </a>
+            <?php
+
+        }
+        ?>
+        </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <?php
@@ -59,7 +68,7 @@ session_start();
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Edit Account</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -86,12 +95,16 @@ session_start();
     </nav>
     <main>
         <section class="container" id="app">
-            <div class="d-flex mr-4 mb-4 justify-content-center">
-                <button type="button" class="list-group-item list-group-item-action">
-                    Form
+            <div class="d-flex mr-4 mb-4 mt-4 justify-content-center">
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
+                    <a href="form.php" class="aBlack">Form</a>
                 </button>
-                <button type="button" class="list-group-item list-group-item-action">Offers</button>
-                <button type="button" class="list-group-item list-group-item-action active">Dashboard</button>
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary active" id="hoverWhite">
+                    <a href="dashboard.php" class="aBlack">Dashboard</a>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
+                    <a href="offer.php" class="aBlack">Offers</a>
+                </button>
             </div>
             <ul class="nav nav-tabs-pink nav-inline nav-justified">
                 <li class="nav-item">
@@ -107,16 +120,17 @@ session_start();
                     <div class="list-group-horizontal">
                         <!-- call to database (dynamically) -->
                         <div class="list-group-item list-group-item-action">
-                            <a href="details.php">
-                                <h3 class="text-left">John Doe</h3>
-                                <div class="details float-left text-left content" :class=" { hideContent: isHidden, showContent: isShown } ">
+                            <!-- id should be the company id in the Food table -->
+                            <a href="details.php?id=1">
+                                <h3 class="text-left">Company 1</h3>
+                                <div class="float-left text-left content" :class=" { hideContent: isHidden, showContent: isShown } ">
                                     <ul>
-                                        <li>Fruits 200</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
+                                        <li>Fruits</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
                                     </ul>
                                 </div>
                                 <div class="float-right justify-content-center">
