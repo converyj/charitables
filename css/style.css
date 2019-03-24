@@ -65,7 +65,10 @@
 }
 /*changed sign up hovers to blue*/
 
-
+/*doesnt work*/
+#hoverWhite:hover{
+	color:#fff;
+}
 
 /*SIGN UP
 .centerSignUpButtons{
@@ -123,9 +126,9 @@ display: none;
   }
 
 .buttonCA {  
-	width: 8em;
-  	height: 8em;
-  	line-height: 8em; /* adjust line height to align vertically*/
+	width: 6em;
+  	height: 6em;
+  	line-height: 6em; /* adjust line height to align vertically*/
   	padding:0;
   	border-radius: 50%;
   	margin-right:1em;
@@ -151,4 +154,25 @@ display: none;
 	float:none;
 }
 */
+
+/* Dashboard Styles */
+
+.hideContent {
+		overflow: hidden;
+		height: 3em;
+}
+
+.showContent {
+		height: auto;
+}
+
+#Mybutton1 {
+		padding: 10px 0;
+		text-align: center;
+}
+
+#view-more {
+		clear: both;
+}
+
 

@@ -1,21 +1,29 @@
-<?php 
-
+<?php
 session_start();
-
 $dsn = "mysql:host=localhost;dbname=browne9_Charitables;charset=utf8mb4";
 $dbusername = "browne9_weedsite";
 $dbpassword = "g@5o4nFUJ7ha";
-
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-$baby = $pdo->prepare("SELECT * FROM `FoodImages` WHERE `id`= 1");
-$fruits = $pdo->prepare("SELECT * FROM `FoodImages` WHERE `id`= 7");
+$stmt = $pdo->prepare("SELECT * FROM `FoodImages`");
+$stmt->execute();
 
-$baby->execute();
-$fruits->execute();
+$stmt2 = $pdo->prepare("SELECT * FROM `ClothesImages`");
+$stmt2->execute();
 
-$b = $baby->fetch(); 
-$f = $fruits->fetch(); 
+$stmt3 = $pdo->prepare("SELECT * FROM `FoodImages` UNION ALL SELECT * FROM `ClothesImages`");
+$stmt3->execute();
+
+$stmt4 = $pdo->prepare("SELECT * FROM `FoodImages` UNION ALL SELECT * FROM `ClothesImages`");
+$stmt4->execute();
+//
+// $stmt5 = $pdo->prepare("SELECT * FROM `ClothesImages`");
+// $stmt5->execute();
+//
+// $stmt6 = $pdo->prepare("SELECT * FROM `FoodImages`");
+// $stmt6->execute();
+
+include 'images.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +45,17 @@ $f = $fruits->fetch();
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand h1" href="home.html">Charitables</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+       <a class="navbar-brand h1" href="home.html">Charitables</a>
+<div>
+            <a class="float-left nav-link navbar-right" href="#">
+               <i class="fas fa-bell"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+</div>
+
+
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <?php
@@ -49,7 +64,7 @@ $f = $fruits->fetch();
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
                 </li>
-                <?php 
+                <?php
             }
             ?>
                 <li class="nav-item">
@@ -71,12 +86,7 @@ $f = $fruits->fetch();
                         <a class="dropdown-item" href="#">Logout</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-bell"></i>
-                    </a>
-                </li>
-                <?php 
+                <?php
             } else {
                 ?>
                 <li class="nav-item">
@@ -85,7 +95,7 @@ $f = $fruits->fetch();
                 <li class="nav-item">
                     <a class="nav-link" href="signUp.php">Sign Up</a>
                 </li>
-                <?php 
+                <?php
             }
             ?>
             </ul>
@@ -111,149 +121,78 @@ $f = $fruits->fetch();
                 <div class="tab-content">
                     <div id="food" class="container tab-pane active center"><br>
                         <div class="form-row">
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                 <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($f["images"]); ?> "width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1"><?php echo($f["category"]); ?></label>
-                                </div>
-                            </div>
+                          <?php
+                          while($row = $stmt ->fetch() )
+                          {
+                          ?>
+                          <div class="form-group col-4 col-md-3 col-lg-2">
+                              <!-- call to database (dynamically) -->
+                               <!-- replace values of categoryId, id, src, label with values from the database   -->
+                              <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo($row["categoryId"]);?>', id = '<?php echo($row["name"]);?>'" data-toggle="modal" data-target="#<?php echo($row["Modal"]);?>">
+                                  <img class="buttonC" src="images/<?php echo($row["images"]);?>" width="50" height="50" />
+                              </button>
+                              <div>
+                                  <label class="justify-content-center pt-1"><?php echo($row["category"]);?></label>
+                              </div>
+
                         </div>
+                        <?php
+                      }
+                        ?>
                     </div>
+                  </div>
+                    <!----------------------------------------------------------------------------------------------------------------------------------->
                     <div id="clothes" class="container tab-pane fade center"><br>
                         <div class="form-row">
+                          <?php
+                          while($row2 = $stmt2 ->fetch() )
+                          {
+                          ?>
                             <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                 <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'tops', id = 'Tops'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Tops</label>
-                                </div>
-                            </div>
+                          <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo($row2["categoryId"]);?>', id = '<?php echo($row2["name"]);?>'" data-toggle="modal" data-target="#<?php echo($row2["Modal"]);?>">
+                              <img class="buttonC" src="clothesImages/<?php echo($row2["images"]);?>" width="50" height="50" />
+                          </button>
+                          <div>
+                              <label class="justify-content-center pt-1"><?php echo($row2["category"]);?></label>
+                          </div>
+
+                                    </div>
+                          <?php
+                        }
+                          ?>
                         </div>
                     </div>
+                    <!-------------------------------------------------------------------------------------------------------------------------------->
                     <div id="all" class="container tab-pane fade center"><br>
                         <div class="form-row">
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                 <!-- replace values of categoryId, id, src, label with values from the database   -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'fruit', id = 'Fruit'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($f["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Fruit</label>
-                                </div>
+                          <?php
+                          while($row3 = $stmt3 ->fetch() )
+                          {
+                          ?>
+                          <div class="form-group col-4 col-md-3 col-lg-2">
+                              <!-- call to database (dynamically) -->
+                               <!-- replace values of categoryId, id, src, label with values from the database   -->
+                              <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo($row3["categoryId"]);?>', id = '<?php echo($row3["name"]);?>'" data-toggle="modal" data-target="#<?php echo($row3["Modal"]);?>">
+                                  <img class="buttonC" src="images/<?php echo($row3["images"]);?>" width="50" height="50" />
+                              </button>
+                              <div>
+                                  <label class="justify-content-center pt-1"><?php echo($row3["category"]);?></label>
+                              </div>
                             </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'veg', id = 'Vegetable & Legumes'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Vegetables & Legumes</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'meat', id = 'Meat & Seafood'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Meat & Seafood</label>
-                                </div>                                
 
-                            </div>
-                            <!-- PUT STUFF HERE -->
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                 <!-- call to database (dynamically)  -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'diary', id = 'Diary'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Diary</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'grains', id = 'Grains'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Grains</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'juice', id = 'Water & Juice'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Water & Juice</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'eggs', id = 'Eggs & Soy'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Eggs & Soy</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'condiments', id = 'Sauce & Condiments'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Sauce & Condiments</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'snacks', id = 'Baked Goods & Snacks'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Baked Goods & Snacks</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'baby', id = 'Baby Food'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="images/<?php echo($b["images"]); ?>" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Baby Food</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2">
-                                <!-- call to database (dynamically) -->
-                                <button type="button" class="buttonC border-0" @click="categoryId = 'non-perishables', id = 'Non-Perishables'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Non-Perishables</label>
-                                </div>
-                            </div>
-                            <div class="form-group col-4 col-md-3 col-lg-2"> 
-                                <!-- call to database (dynamically) -->
-                                 <button type="button" class="buttonC border-0" @click="categoryId = 'beverages', id = 'Other Beverages'" data-toggle="modal" data-target="#itemsModal">
-                                    <img class="buttonC" src="fruit.jpg" width="50" height="50" />
-                                </button>
-                                <div>
-                                    <label class="justify-content-center pt-1">Other Beverages</label>
-                                </div>
-                            </div>
+
+                        <?php
+                      }
+                        ?>
                         </div>
                     </div>
+
                     <!-- Modal -->
-                    <div class="modal fade" id="itemsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <?php
+                    while($row4 = $stmt4 ->fetch() )
+                    {
+                    ?>
+                    <div class="modal fade" id="<?php echo($row4["Modal"]);?>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -264,7 +203,7 @@ $f = $fruits->fetch();
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <img class="buttonCA" src="fruit.jpg" width="100" height="100" />
+                                        <img class="buttonCA" src="images/<?php echo($row4["images"]);?>" width="100" height="100" />
                                         <label for="item">Item</label>
                                         <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item">
                                         <label for="qty">Quantity</label>
@@ -278,13 +217,18 @@ $f = $fruits->fetch();
                             </div>
                         </div>
                     </div>
-                    <section id="summary">
+                    <?php
+                  }
+                    ?>
+
+
+                    <section id="summary" class="pb-4">
                         <div class="form-row" v-for="item, index in items">
-                            <div class="form-group col-8 col-md-6 pb-4">
+                            <div class="form-group col-7 col-md-6">
                                 <label for="items">Item</label>
                                 <input v-model.lazy="item.name" type="text" name="item" class="form-control" id="items">
                             </div>
-                            <div class="form-group col-2 col-md-2">
+                            <div class="form-group col-3 col-md-2">
                                 <label for=" qty">Quantity</label>
                                 <input type="text" name="quantity" v-model.lazy.number="item.quantity" id="qty" class="form-control">
                             </div>
@@ -293,17 +237,17 @@ $f = $fruits->fetch();
                             </button>
                         </div>
                     </section>
-                    <div class="center">
-                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle" />
+                    <div class="center pt-4 pb-4">
+                        <input type="submit" @click="parse" value="Confirm" class="col-8 col-sm-8 col-md-4 btn btn-primary m-auto mybuttonstyle pt-3 pb-3" />
                     </div>
             </form>
         </section>
-        <footer class="page-footer text-center pb-4">
+<!--         <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
                 <i class="fab fa-twitter pr-2"></i>
                 <i class="fab fa-facebook-f pr-2"></i>
             </div>
-        </footer>
+        </footer> -->
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/form.js"></script>
@@ -314,4 +258,4 @@ $f = $fruits->fetch();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
-</html> 
+</html>

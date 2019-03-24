@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -21,9 +21,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand h1" href="home.html">Charitables</a>
+        <a class="nav-link" href="#">
+            <i class="fas fa-bell"></i>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,7 +39,8 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
                 </li>
-                <?php 
+                <?php
+
             }
             ?>
                 <li class="nav-item">
@@ -62,7 +67,8 @@ session_start();
                         <i class="fas fa-bell"></i>
                     </a>
                 </li>
-                <?php 
+                <?php
+
             } else {
                 ?>
                 <li class="nav-item">
@@ -71,59 +77,86 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="signUp.php">Sign Up</a>
                 </li>
-                <?php 
+                <?php
+
             }
             ?>
             </ul>
         </div>
     </nav>
     <main>
-        <section class="container pt-4" id="app">
-        <div class="list-group float-md-left mr-4 mb-4">
-                <button type="button" class="list-group-item list-group-item-action active">
+        <section class="container" id="app">
+            <div class="d-flex mr-4 mb-4 mt-4 justify-content-center">
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
                     Form
                 </button>
-                <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">Offers</button>
+                <button type="button" class="list-group-item list-group-item-action active btn-outline-secondary">Dashboard</button>
             </div>
-        <ul class="nav nav-tabs-pink nav-inline nav-justified">
-                    <li class="nav-item">
-                        <a class="nav-link active nav-link-pink aBlack" data-toggle="tab" href="#donor">Donor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#recipient">Recipient</a>
-                    </li>
-                </ul>
+            <ul class="nav nav-tabs-pink nav-inline nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link active nav-link-pink aBlack" data-toggle="tab" href="#donor">Donor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#recipient">Recipient</a>
+                </li>
+            </ul>
             <!-- Tab panes -->
             <div class="tab-content">
                 <div id="donor" class="container tab-pane active center"><br>
-                    <div class="list-group">
+                    <div class="list-group-horizontal">
                         <!-- call to database (dynamically) -->
-                        <button type="button" class="list-group-item list-group-item-action active">
-                            Cras justo odio
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                        <div class="list-group-item list-group-item-action">
+                            <a href="details.php">
+                                <h3 class="text-left">John Doe</h3>
+                                <div class="details float-left text-left content" :class=" { hideContent: isHidden, showContent: isShown } ">
+                                    <ul>
+                                        <li>Fruits 200</li>
+                                        <li>Vegetables & Legumes 100</li>
+                                        <li>Vegetables & Legumes 100</li>
+                                        <li>Vegetables & Legumes 100</li>
+                                        <li>Vegetables & Legumes 100</li>
+                                        <li>Vegetables & Legumes 100</li>
+                                    </ul>
+                                </div>
+                                <div class="float-right justify-content-center">
+                                    <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
+                                </div>
+                            </a>
+                            <div id="view-more">
+                                <button id="Mybutton1" @click="hideShow" class=" btn btn-primary" data-toggle="collapse">{{text}}</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="recipient" class="container tab-pane fade center"><br>
-                    <div class="list-group">
+                    <div class="list-group-horizontal">
                         <!-- call to database (dynamically) -->
-                        <button type="button" class="list-group-item list-group-item-action active">
-                            Cras justo odio
-                        </button>
-                        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                        <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                        <div class="list-group-item list-group-item-action">
+                            <a href="details.php">
+                                <h3 class="text-left">John Doe</h3>
+                                <div class="details float-left text-left hideContent content">
+                                    <ul>
+                                        <li>Fruits</li>
+                                        <li>Fruits</li>
+                                        <li>Fruits</li>
+                                        <li>Fruits</li>
+                                        <li>Fruits</li>
+                                        <li>Fruits</li>
+                                    </ul>
+
+                                    <div class="float-right justify-content-center">
+                                        <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
+                                    </div>
+                                </div>
+                            </a>
+                            <div id="view-more">
+                                <button id="Mybutton1" class="btn btn-primary" data-toggle="collapse">View More</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </section>
         <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
@@ -133,7 +166,7 @@ session_start();
         </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/form.js"></script>
+    <script src="js/dashboard.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
