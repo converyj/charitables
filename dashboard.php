@@ -119,16 +119,17 @@ session_start();
                     <div class="list-group-horizontal">
                         <!-- call to database (dynamically) -->
                         <div class="list-group-item list-group-item-action">
-                            <a href="details.php">
-                                <h3 class="text-left">John Doe</h3>
-                                <div class="details float-left text-left content" :class=" { hideContent: isHidden, showContent: isShown } ">
+                            <!-- id should be the company id in the Food table -->
+                            <a href="details.php?id=1">
+                                <h3 class="text-left">Company 1</h3>
+                                <div class="float-left text-left content" :class=" { hideContent: isHidden, showContent: isShown } ">
                                     <ul>
-                                        <li>Fruits 200</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
-                                        <li>Vegetables & Legumes 100</li>
+                                        <li>Fruits</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
                                     </ul>
                                 </div>
                                 <div class="float-right justify-content-center">
