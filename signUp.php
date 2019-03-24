@@ -47,10 +47,10 @@
             <form action="signUp-processing.php" method="POST">
                 <div class="form-row mt-4">
                     <div class="btn-group btn-group-justified m-auto" data-toggle="buttons">
-                        <label class="btn btn-outline-secondary active">
+                        <label class="btn btn-outline-secondary active" id="blueBtn-secondary">
                             <input type="radio" name="rdbRole" id="donor" value="1" checked>Donor
                         </label>
-                        <label class="btn btn-outline-secondary">
+                        <label class="btn btn-outline-secondary" id="blueBtn-secondary">
                             <input type="radio" name="rdbRole" id="recipient" value="2">Recipient
                         </label>
                     </div>
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" value="Join Now" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2 centerSignUpButtons2" />
+                    <input type="submit" value="Join Now" class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2 centerSignUpButtons2" id="pinkBtn" />
                 </div>
             </form>
         </section>

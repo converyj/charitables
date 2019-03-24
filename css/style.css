@@ -22,28 +22,40 @@
 }
 
 /*blue*/
-.btn-primary:hover, .btn-primary:active{
+#blueBtn:hover, #blueBtn:active{
 	border-color: rgba(110, 127, 255, 1) !important;
   	background: rgba(110, 127, 255, 1) !important;
 }
 
 /*pink*/
-.btn-primary2:hover, .btn-primary2:active{
+#pinkBtn:hover, #pinkBtn:active{
   background: rgba(	255, 106, 156, 1) !important;
   color: #fff;
 }
 
-/*changed sign up hovers to blue*/
-.btn-outline-secondary:hover {
-	color: #fff;
-/*  background-color: #6c757d;
-  border-color: #6c757d;*/
+/*
+.btn-primary:hover, .btn-primary:active{
 	border-color: rgba(110, 127, 255, 1) !important;
   	background: rgba(110, 127, 255, 1) !important;
-}
+}*/
+
+/*pink
+.btn-primary2:hover, .btn-primary2:active{
+  background: rgba(	255, 106, 156, 1) !important;
+  color: #fff;
+}*/
+
+/*changed sign up hovers to blue*/
+/*.btn-outline-secondary:hover {
+	color: #fff !important;
+  background-color: #6c757d;
+  border-color: #6c757d;
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
+}*/
 
 /*to change*/
-.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+/*.btn-outline-secondary:focus, .btn-outline-secondary.focus {
 	box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
 }
 
@@ -56,15 +68,37 @@
 .show > .btn-outline-secondary.dropdown-toggle {
 	color: #fff;
 	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;*/
+/*}*/
+
+/*to change*/
+/*.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-secondary.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}*/
+/*changed sign up hovers to blue*/
+
+#blueBtn-secondary:hover{
+	color: #fff !important;
+/*  background-color: #6c757d;
+  border-color: #6c757d;*/
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;	
+}
+
+#blueBtn-secondary.disabled, #blueBtn-secondary:disabled {
+	color: rgba(110, 127, 255, 1) !important;
+	background-color: transparent;
+}
+
+#blueBtn-secondary:not(:disabled):not(.disabled):active, #blueBtn-secondary:not(:disabled):not(.disabled).active,
+.show > #blueBtn-secondary.dropdown-toggle {
+	color: #fff;
+	border-color: rgba(110, 127, 255, 1) !important;
   	background: rgba(110, 127, 255, 1) !important;
 }
 
-/*to change*/
-.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-outline-secondary.dropdown-toggle:focus {
-	box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-/*changed sign up hovers to blue*/
+
 
 /*doesnt work*/
 #hoverWhite:hover{

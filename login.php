@@ -67,13 +67,13 @@
                 <div class="text-center">
                     <br>
                     <div class="row">
-                        <input type="submit" value="Login" class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle" />
+                        <input type="submit" value="Login" class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle" id="blueBtn" />
                     </div>
                 </div>
             </form>
             <p class="text-center mt-3 mb-3">or</p>
             <div class="row">
-                <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button">Create New Account</a>
+                <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button" id="pinkBtn">Create New Account</a>
             </div>
             <br>
             <div class="text-center">
