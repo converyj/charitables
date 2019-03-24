@@ -99,7 +99,7 @@ include 'images.php';
     </nav>
     <main>
         <section class="container pt-4" id="app">
-            <form action="" method="POST">
+            <form action="form-processing.php" method="POST">
                 <!-- <div class="form-row mt-4"> -->
                 <ul class="nav nav-tabs-pink nav-inline nav-justified">
                     <li class="nav-item">
