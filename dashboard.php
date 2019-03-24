@@ -31,13 +31,14 @@ session_start();
             </button>
             <?php
             if (isset($_SESSION['role'])) {
-            ?>
-                <a class="d-flex justify-content-end float-right nav-link navbar-right" href="#">
-                    <i class="fas fa-bell"></i>
-                </a>
+                ?>
+            <a class="d-flex justify-content-end float-right nav-link navbar-right" href="#">
+                <i class="fas fa-bell"></i>
+            </a>
             <?php
-            } 
-            ?>
+
+        }
+        ?>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
@@ -96,13 +97,13 @@ session_start();
         <section class="container" id="app">
             <div class="d-flex mr-4 mb-4 mt-4 justify-content-center">
                 <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
-                    <a href="form.php"  class="aBlack">Form</a>
+                    <a href="form.php" class="aBlack">Form</a>
                 </button>
-                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary active" id="hoverWhite">
                     <a href="dashboard.php" class="aBlack">Dashboard</a>
                 </button>
-                <button type="button" class="list-group-item list-group-item-action active btn-outline-secondary" id="hoverWhite">
-                    <a href="offer.php" class="aBlack">Offers</a>                
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="hoverWhite">
+                    <a href="offer.php" class="aBlack">Offers</a>
                 </button>
             </div>
             <ul class="nav nav-tabs-pink nav-inline nav-justified">
