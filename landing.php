@@ -7,7 +7,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Dashboard | Charitables</title>
+    <title>Landing | Charitables</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
@@ -93,29 +93,31 @@ session_start();
             </ul>
         </div>
     </nav>
+
     <main>
-        <section class="container" id="app">
-            <div class="d-flex mr-2 mb-4 mt-4 ml-2 justify-content-center">
-                <button type="button" class="list-group-item list-group-item-action">
-                    <a href="form.php" class="aBlack">Form</a>
-                </button>
-                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary active" id="blueBtn-secondary">
-                    <a href="dashboard.php" class="aWhite">Dashboard</a>
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">
-                    <a href="offer.php" class="aBlack">Offers</a>
-                </button>
+        <section class="col-9 col-sm-6 col-md-6 col-lg-6 col-xl-6 container" id="app">
+            <header>
+                <h1 class="text-center pt-4 pb-4">Nourish your Community</h1>
+                <!-- <h5 class="text-center pb-4">Every Little Help Counts</h5> -->
+            </header>
+            <div class="pb-4">
+                Charitables aims to connect businesses and organizations together to reduce waste and give to the people in need.
             </div>
-            <ul class="nav nav-tabs-pink nav-inline nav-justified">
-                <li class="nav-item">
-                    <a class="nav-link active nav-link-pink aBlack" data-toggle="tab" href="#donor">Donor</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#recipient">Recipient</a>
-                </li>
-            </ul>
+            <div>
+                Be part of the change.
+            </div>
 
+<div class="text-center pt-3">
 
+                    <div class="row pb-4">
+                        <a class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle" href="signUp.php" role="button" id="blueBtn">Join Us</a>
+                        
+                    </div>
+                </div>
+
+            <div class="row">
+                <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="donate.php" role="button" id="pinkBtn">Donate to our Cause</a>
+            </div>
 
 
 

@@ -72,10 +72,10 @@
                 </div>
             </form>
             <p class="text-center mt-3 mb-3">or</p>
-            <div class="row">
+            <div class="row pb-4">
                 <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button" id="pinkBtn">Create New Account</a>
             </div>
-            <br>
+
             <div class="text-center">
                 <a href="#">Forgot Password?</a>
             </div>
