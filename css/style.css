@@ -33,6 +33,10 @@
   color: #fff;
 }
 
+/*a{
+	color:#3f4653 !important;
+}*/
+
 /*
 .btn-primary:hover, .btn-primary:active{
 	border-color: rgba(110, 127, 255, 1) !important;
@@ -79,7 +83,7 @@
 /*changed sign up hovers to blue*/
 
 #blueBtn-secondary:hover{
-	color: #fff !important;
+	color: white !important;
 /*  background-color: #6c757d;
   border-color: #6c757d;*/
 	border-color: rgba(110, 127, 255, 1) !important;
@@ -101,6 +105,10 @@
 
 
 /*doesnt work*/
+#hoverWhite{
+	color:red;
+}
+
 #hoverWhite:hover{
 	color:#fff;
 }
@@ -119,11 +127,26 @@ display: none;
 }
 
 
-
 /*Form Page*/
+#aBlack{
+	color:#3f4653;
+}
+
+#aBlack.active{
+	color:white !important;
+}
+
 .aBlack{
 	color:#3f4653;
 }
+
+/*a{
+	color:#3f4653 !important;
+}
+
+a.active{
+	color:white;
+}*/
 
 .nav-link-pink.active {
 	color: white !important;
@@ -190,7 +213,8 @@ display: none;
 }
 */
 
-/* Dashboard Styles */
+
+/* Dashboard Styles *************/
 
 .hideContent {
 		overflow: hidden;
