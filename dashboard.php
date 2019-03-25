@@ -95,7 +95,7 @@ session_start();
     </nav>
     <main>
         <section class="container" id="app">
-            <div class="d-flex mr-4 mb-4 mt-4 justify-content-center noUnderline">
+            <div class="d-flex mr-4 mb-4 mt-4 justify-content-center">
                 <button type="button" class="list-group-item list-group-item-action">
                     <a href="form.php" class="aBlack">Form</a>
                 </button>
