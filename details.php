@@ -35,6 +35,8 @@ SELECT firstname, lastname, companyname. streetname, city, province, postal
     <link src="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Load the Google Maps JS API. Your Google maps key will be rendered. -->
+
     <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -42,10 +44,6 @@ SELECT firstname, lastname, companyname. streetname, city, province, postal
             height: 425px;
         }
     </style>
-    <!-- <script>
-        var id = "<?php echo $id; ?>";
-        console.log(id)
-    </script> -->
 </head>
 
 
@@ -174,7 +172,6 @@ SELECT firstname, lastname, companyname. streetname, city, province, postal
                     </div>
                     <script>
                         var id = '<?= $id ?>';
-                        document.write(id);
                     </script>
                 </form>
         </section>
@@ -185,10 +182,89 @@ SELECT firstname, lastname, companyname. streetname, city, province, postal
             </div>
         </footer>
     </main>
+    <script>
+        alert("id" + id)
+
+
+        function initMap() {
+            // create the geocoder
+            geocoder = new google.maps.Geocoder();
+
+            // set some default map details, initial center point, zoom and style
+            var mapOptions = {
+                center: new google.maps.LatLng(43.6532, -79.3832),
+                zoom: 7,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            // create the map and reference the div#mapid container
+            map = new google.maps.Map(document.getElementById("mapid"), mapOptions);
+
+            // fetch the existing places (ajax)
+            // and put them on the map
+            fetchPlaces();
+        }
+
+        // when page is ready, initialize the map!
+        // google.maps.event.addDomListener(window, 'load', initialize);
+
+        // fetch the user address from php file
+        function fetchPlaces() {
+            $.ajax({
+                type: "GET",
+                url: "getUserAddress.php",
+                data: {
+                    id: 1
+                },
+                async: true,
+                dataType: "json",
+                success: function() {
+                    console.log(id)
+                },
+                error: function(xhr, status, err) {
+                    console.log("can't find the lala");
+                }
+            });
+
+            // get the coordinates
+            function getCoordinates(json) {
+                console.log(json)
+                // call mapbox api to get coordinates
+                $.ajax({
+                    type: "GET",
+                    url: "https://maps.googleapis.com/maps/api/geocode/json?address" + json + "?key=AIzaSyD5TfqRaeXmKpUbcGKd5vQbHS4bqj8qHkU&callback=initMap",
+                    async: true,
+                    dataType: "json",
+                    success: putOnMap,
+                    error: function(xhr, status, err) {
+                        console.log("can't find address")
+                    }
+                });
+            }
+        }
+
+        // map.setCenter(data[0].geometry.location);
+
+
+        // var marker = new google.maps.Marker({
+        //     position: wonder1,
+        //     animation: google.maps.Animation.DROP,
+        //     map: map
+        // });
+
+
+
+
+        //Associate the styled map with the MapTypeId and set it to display.
+        // map.mapTypes.set('styled_map', styledMapType);
+        // map.setMapTypeId('styled_map');
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- <script src="js/dashboard.js"></script> -->
-    <script src="js/LocationByGeoCode.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5TfqRaeXmKpUbcGKd5vQbHS4bqj8qHkU&callback=initMap">
+    </script>
+    <!-- <script src="js/LocationByGeoCode.js"></script> -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
