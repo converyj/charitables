@@ -103,21 +103,42 @@ session_start();
             <div class="pb-4">
                 Charitables aims to connect businesses and organizations together to reduce waste and give to the people in need.
             </div>
-            <div>
+            <div class="pb-4">
                 Be part of the change.
             </div>
 
-<div class="text-center pt-3">
+            <div class="text-center pt-3">
 
-                    <div class="row pb-4">
-                        <a class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle" href="signUp.php" role="button" id="blueBtn">Join Us</a>
+                <div class="row pb-4">
+                    <a class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle" href="signUp.php" role="button" id="blueBtn">Join Us
+                    </a>
                         
-                    </div>
                 </div>
 
-            <div class="row">
-                <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="donate.php" role="button" id="pinkBtn">Donate to our Cause</a>
+                <div class="row">
+                    <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="donate.php" role="button" id="pinkBtn">Donate to our Cause
+                    </a>
+                </div>
             </div>
+        </section>
+
+        <section class="col-9 col-sm-6 col-md-6 col-lg-6 col-xl-6 container" id="app">
+            <h1 class="text-center pt-4 pb-4">What does Charitables do?</h1>
+
+
+        </section>
+
+        <section class="col-9 col-sm-6 col-md-6 col-lg-6 col-xl-6 container" id="app">
+            <h1 class="text-center pt-4 pb-4">Why does this work?</h1>
+
+
+        </section>
+
+        <section class="col-9 col-sm-6 col-md-6 col-lg-6 col-xl-6 container" id="app">
+            <h1 class="text-center pt-4 pb-4">Connect with Us</h1>
+
+
+        </section>
 
 
 
