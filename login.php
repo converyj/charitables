@@ -64,8 +64,8 @@
                     <input type="checkbox" class="form-check-input" id="remember" name="chkremember">
                     <label class="form-check-label" for="remember">Remember Me</label>
                 </div>
-                <div class="text-center">
-                    <br>
+                <div class="text-center pt-3">
+
                     <div class="row">
                         <input type="submit" value="Login" class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle" id="blueBtn" />
                     </div>

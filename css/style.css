@@ -157,8 +157,9 @@ display: none;
 	color:white;
 }
 
-
-
+.fa-angle-right{
+	color: rgba(110, 127, 255, 1);
+}
 /*#fullBorder{
 	border-top-left-radius: 0rem;
 	border-top-right-radius: .25rem;
