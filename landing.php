@@ -114,68 +114,11 @@ session_start();
                     <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#recipient">Recipient</a>
                 </li>
             </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div id="donor" class="container tab-pane active center"><br>
-                    <div class="list-group-horizontal">
-                        <!-- call to database (dynamically) -->
-                        <div class="list-group-item list-group-item-action">
-                            <!-- id should be the company id in the Food table -->
-                            <a href="details.php?id=1">
-                                <h3 class="text-left aBlack">Company 1</h3>
-                                <div class="float-left text-left content" :class=" { hideContent: isHidden, showContent: isShown } ">
-                                    <ul class="aBlack">
-                                        <li>Fruits</li>
-                                        <li>Vegetables & Legumes</li>
-                                        <li>Vegetables & Legumes</li>
-                                        <li>Vegetables & Legumes</li>
-                                        <li>Vegetables & Legumes</li>
-                                        <li>Vegetables & Legumes</li>
-                                    </ul>
-                                </div>
-                                <div class="float-right justify-content-center">
-                                    <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
-                                </div>
-                            </a>
-                            <div id="view-more">
-                                <button id="Mybutton1" @click="hideShow" 
-                                
-                                class=" btn btn-primary mybuttonstyle col-5 col-sm-3 col-md-3" 
-                                
-                                data-toggle="collapse">{{text}}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="recipient" class="container tab-pane fade center"><br>
-                    <div class="list-group-horizontal">
-                        <!-- call to database (dynamically) -->
-                        <div class="list-group-item list-group-item-action">
-                            <a href="details.php">
-                                <h3 class="text-left aBlack">John Doe</h3>
-                                <div class="details float-left text-left hideContent content">
-                                    <ul class="aBlack">
-                                        <li>Fruits</li>
-                                        <li>Fruits</li>
-                                        <li>Fruits</li>
-                                        <li>Fruits</li>
-                                        <li>Fruits</li>
-                                        <li>Fruits</li>
-                                    </ul>
 
-                                    <div class="float-right justify-content-center">
-                                        <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <div id="view-more">
-                                <button id="Mybutton1" class="btn btn-primary mybuttonstyle col-3 col-sm-3 col-md-3" id="blueBtn" data-toggle="collapse">View More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
+
+
         <footer class="page-footer text-center pb-4">
             <div class="icons mt-4">
                 <i class="fab fa-twitter pr-2"></i>
