@@ -95,15 +95,15 @@ session_start();
     </nav>
     <main>
         <section class="container" id="app">
-            <div class="d-flex mr-4 mb-4 mt-4 justify-content-center">
-                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="blueBtn-secondary aBlack">
-                    <a href="form.php">Form</a>
+            <div class="d-flex mr-4 mb-4 mt-4 justify-content-center noUnderline">
+                <button type="button" class="list-group-item list-group-item-action">
+                    <a href="form.php" class="aBlack">Form</a>
                 </button>
-                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary active aBlack" id="blueBtn-secondary">
-                    <a href="dashboard.php" id="blueBtn-secondary aBlack" class=" nav-link-pink ">Dashboard</a>
+                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary active" id="blueBtn-secondary">
+                    <a href="dashboard.php" class="aWhite">Dashboard</a>
                 </button>
-                <button type="button" class="list-group-item list-group-item-action btn-outline-secondary" id="blueBtn-secondary">
-                    <a href="offer.php" id="aBlack">Offers</a>
+                <button type="button" class="list-group-item list-group-item-action">
+                    <a href="offer.php" class="aBlack">Offers</a>
                 </button>
             </div>
             <ul class="nav nav-tabs-pink nav-inline nav-justified">
