@@ -1,15 +1,9 @@
 <?php
 //receive values user submitted from form
-$role = $_POST['rdbRole'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$orgName = $_POST['organization'];
-$taxNO = $_POST['taxNumber'];
-$address = $_POST['address'];
-$contact = $_POST['contact'];
-$city = $_POST['city'];
-$province = $_POST['province'];
-$postal = $_POST['postalCode'];
+$item = $_POST['item'];
+$quantity = $_POST['quantity'];
+
+
 
 
 
@@ -20,14 +14,14 @@ $dbpassword = "g@5o4nFUJ7ha";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-$stmt = $pdo->prepare("INSERT INTO `Users` (`id`,`role`,`email`, `password`, `organization_name`, `tax_id_number`, `address`, `contact`,`city`,`state`,`postal_code`)
- VALUES (NULL, '$role', '$email', '$password', '$orgName','$taxNO','$address','$contact','$city','$province','$postal'); ");
+$stmt = $pdo->prepare("INSERT INTO `Food` (`id`,`category`,`item`,`quantity`)
+ VALUES (NULL,NULL, '$item', '$quantity'); ");
 
- $stmt2 = $pdo->prepare("INSERT INTO `Users` (`id`,`role`,`email`, `password`, `organization_name`, `tax_id_number`, `address`, `contact`,`city`,`state`,`postal_code`)
-  VALUES (NULL, '$role', '$email', '$password', '$orgName','$taxNO','$address','$contact','$city','$province','$postal'); ");
+//  $stmt2 = $pdo->prepare("INSERT INTO `Clothes` (`id`,`item`,`quantity`)
+//   VALUES (NULL, '$item', '$quantity'); ");
 
 $stmt->execute();
-$stmt2->execute();
+// $stmt2->execute();
 
 
 header("Location: form.php");
