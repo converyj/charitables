@@ -91,25 +91,28 @@
                     <div class="form-group col-12">
                         <label for="city">City</label>
                         <select id="city" name="city" class="form-control" required>
-                            <option selected>Choose ...</option>
-                            <option>Toronto</option>
-                            <option>Vancouver</option>
-                            <option>Montreal</option>
-                            <option>Calgary</option>
-                            <option>Edmonton</option>
-                            <option>Halifax</option>
+                            <option selected value="">Choose ...</option>
+                            <option value="Brampton">Brampton</option>
+                            <option value="Oakville">Oakville</option>
+                            <option value="Mississauga">Missassauga</option>
+                            <option value="Toronto">Toronto</option>
+                            <option value="Vancouver">Vancouver</option>
+                            <option value="Montreal">Montreal</option>
+                            <option value="Calgary">Calgary</option>
+                            <option value="Edmonton">Edmonton</option>
+                            <option value="Halifax">Halifax</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="prov">Province</label>
                         <select id="prov" name="province" class="form-control" required>
-                            <option selected>Choose ...</option>
-                            <option>Alberta</option>
-                            <option>British Columbia</option>
-                            <option>New Brunswick</option>
-                            <option>Ontario</option>
-                            <option>Quebec</option>
-                            <option>Nova Scotia</option>
+                            <option selected value="">Choose ...</option>
+                            <option value="Alberta">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="ON">Ontario</option>
+                            <option value="Quebec">Quebec</option>
+                            <option value="NS">Nova Scotia</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">

@@ -108,10 +108,10 @@ session_start();
             </div>
             <ul class="nav nav-tabs-pink nav-inline nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link active nav-link-pink aBlack" data-toggle="tab" href="#donor">Donor</a>
+                    <a class="<?php echo ($_SESSION['role'] == '2' ? "active" : ""); ?> nav-link nav-link-pink aBlack" data-toggle="tab" href="#donor">Donor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-pink aBlack" data-toggle="tab" href="#recipient">Recipient</a>
+                    <a class="<?php echo ($_SESSION['role'] == '1' ? "active" : ""); ?> nav-link nav-link-pink aBlack" data-toggle="tab" href="#recipient">Recipient</a>
                 </li>
             </ul>
             <!-- Tab panes -->
@@ -138,11 +138,29 @@ session_start();
                                 </div>
                             </a>
                             <div id="view-more">
-                                <button id="Mybutton1" @click="hideShow" 
-                                
-                                class=" btn btn-primary mybuttonstyle col-5 col-sm-3 col-md-3" 
-                                
-                                data-toggle="collapse">{{text}}</button>
+                                <button id="Mybutton1" @click="hideShow" class=" btn btn-primary mybuttonstyle col-5 col-sm-3 col-md-3" data-toggle="collapse">{{text}}</button>
+                            </div>
+                        </div>
+                        <div class="list-group-item list-group-item-action">
+                            <!-- id should be the company id in the Food table -->
+                            <a href="details.php?id=1">
+                                <h3 class="text-left aBlack">Company 1</h3>
+                                <div class="float-left text-left content" :class=" { hideContent: isHidden, showContent: isShown } ">
+                                    <ul class="aBlack">
+                                        <li>Fruits</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                        <li>Vegetables & Legumes</li>
+                                    </ul>
+                                </div>
+                                <div class="float-right justify-content-center">
+                                    <i class="fas fa-angle-right fa-3x d-flex justify-content-end"></i>
+                                </div>
+                            </a>
+                            <div id="view-more">
+                                <button id="Mybutton2" @click="hideShow(id = '1')" class=" btn btn-primary mybuttonstyle col-5 col-sm-3 col-md-3" data-toggle="collapse">{{text}}</button>
                             </div>
                         </div>
                     </div>

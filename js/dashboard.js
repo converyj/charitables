@@ -3,14 +3,15 @@ var vm = new Vue({
     data: {
         isHidden: true,
         isShown: false,
-        text: "View More"
+        text: "View More",
+        id: ''
     },
 
 
     methods: {
-        hideShow() {
+        hideShow(id) {
+            console.log(id)
             this.text = this.text.toUpperCase();
-
             if (this.text === "VIEW MORE") {
                 this.text = "View Less";
                 this.isHidden = false;

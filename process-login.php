@@ -18,17 +18,16 @@ $stmt = $pdo->prepare("
 
 $stmt->execute();
 
-if($row = $stmt->fetch()){
+if ($row = $stmt->fetch()) {
 	//start session if valid and redirect to dashboard
 	$_SESSION['logged-in'] = true;
 	$_SESSION['email'] = $row['email'];
 	$_SESSION['role'] = $row['role'];
 	$_SESSION['id'] = $row['id'];
 
-	// header("Location: signUp.php");
-
-}else{
+	header("Location: dashboard.php");
+} else {
 	//redirect to login page if invalid
-	// header("Location: login.php");
+	header("Location: login.php");
 }
-?>
+ 

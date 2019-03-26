@@ -4,6 +4,6 @@
 session_start();
 session_destroy();
 
-header("Location: dashboard.php");
+header("Location: home.php");
 exit();
  
