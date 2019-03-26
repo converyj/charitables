@@ -22,7 +22,13 @@ $stmt = $pdo->prepare("INSERT INTO `Food` (`id`,`category`,`item`,`quantity`)
 
 $stmt->execute();
 // $stmt2->execute();
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$json = json_encode($results);
 
 
-header("Location: form.php");
+
+// header("Location: form.php");
+echo('{
+    "success":"true"
+  }');
 ?>

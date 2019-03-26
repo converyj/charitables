@@ -16,7 +16,7 @@ var vm = new Vue({
         addItem() {
             this.seen = true;
             this.items.push({
-                category: this.categoryId,
+                // category: this.categoryId,
                 name: this.name,
                 quantity: this.quantity
             });
