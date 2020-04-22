@@ -1,0 +1,215 @@
+$font-stack: "Montserrat", sans-serif;
+
+body{
+  font: $font-stack;
+}
+
+/*
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+
+.intro-info {
+  animation-duration: 200ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+}
+
+#circleButton1{
+  animation-duration: 200ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+}
+#circleButton2{
+  animation-duration: 200ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+}
+#circleButton3{
+  animation-duration: 200ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+}
+.smart{
+  animation-duration: 200ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+}
+
+.simplify{
+  animation-duration: 200ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+}
+
+.local{
+  animation-duration: 200ms;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .intro-info {
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+
+  #circleButton1{
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+  #circleButton2{
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+  #circleButton3{
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+  .smart{
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+
+  .simplify{
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+
+  .local{
+    animation-duration: 300ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .intro-info {
+    animation-duration: 600ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+  #circleButton1{
+    animation-duration: 600ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+  #circleButton2{
+    animation-duration: 600ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+  #circleButton3{
+    animation-duration: 600ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+  .smart{
+    animation-duration: 600ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+
+  .simplify{
+    animation-duration: 600ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+
+  .local{
+    animation-duration: 600ms;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .intro-info {
+    animation-duration: 700ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+  #circleButton1{
+    animation-duration: 700ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+  #circleButton2{
+    animation-duration: 700ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+  #circleButton3{
+    animation-duration: 700ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+
+  .smart{
+    animation-duration: 700ms;
+    animation-delay: 100ms;
+    animation-iteration-count: 1;
+  }
+
+  .simplify{
+    animation-duration: 700ms;
+    animation-delay: 100ms;
+    animation-iteration-count: 1;
+  }
+
+  .local{
+    animation-duration: 700ms;
+    animation-delay: 100ms;
+    animation-iteration-count: 1;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .intro-info {
+    animation-duration: 800ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+  #circleButton1{
+    animation-duration: 800ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+  #circleButton2{
+    animation-duration: 800ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+  #circleButton3{
+    animation-duration: 800ms;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+  }
+  .smart{
+    animation-duration: 800ms;
+    animation-delay: 100ms;
+    animation-iteration-count: 1;
+  }
+
+  .simplify{
+    animation-duration: 800ms;
+    animation-delay: 100ms;
+    animation-iteration-count: 1;
+  }
+
+  .local{
+    animation-duration: 800ms;
+    animation-delay: 100ms;
+    animation-iteration-count: 1;
+  }
+}

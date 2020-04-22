@@ -5,7 +5,7 @@
     <title>Login | Charitables</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media-queries.css" rel="stylesheet">
@@ -17,17 +17,17 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand h1" href="home.html">Charitables</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="home.php"><img src="images/logoLarge.png" alt="logo" height="40"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="donate.php">Support Us</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact Us</a>
+                    <a class="nav-link" href="home.php#contact">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
@@ -73,7 +73,7 @@
             </form>
             <p class="text-center mt-3 mb-3">or</p>
             <div class="row pb-4">
-                <a class="col-9 col-md-8 col-sm-8 btn btn-primary btn-primary2 m-auto mybuttonstyle2" href="signUp.php" role="button" id="pinkBtn">Create New Account</a>
+                <a class="col-9 col-md-8 col-sm-8 btn btn-primary m-auto mybuttonstyle2" href="signUp.php" role="button" id="pinkBtn">Create New Account</a>
             </div>
 
             <div class="text-center">

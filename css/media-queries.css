@@ -37,7 +37,7 @@
 
 }
 
-
+/* when the navbar collapses */
 @media only screen and (min-width:992px){
 	.buttonC {  
 	width: 6em;
@@ -46,4 +46,13 @@
   	padding:0;
   	border-radius: 50%;
   }
+
+  	#smallBell{
+		display:none;
+	  }
+
+	#bigBell{
+		display:unset;
+	}
+
 }

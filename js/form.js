@@ -1,22 +1,24 @@
 var vm = new Vue({
     el: '#app',
     data: {
+        categoryId: '',
+        categoryType: '',
         items: [],
+        category: '',
+        type: '',
         name: '',
         quantity: '',
-        categoryId: '',
-        category: '',
-        id: '',
-        image: '',
-        seen: false
+        seen: false,
+        msg: '',
+        confirmation: false
     },
-
 
     methods: {
         addItem() {
             this.seen = true;
             this.items.push({
-                // category: this.categoryId,
+                category: this.categoryId,
+                type: this.categoryType,
                 name: this.name,
                 quantity: this.quantity
             });
@@ -29,17 +31,34 @@ var vm = new Vue({
             this.$delete(this.items, index);
         },
 
-        parse() {
+        parse(event) {
+            event.preventDefault();
             var myObjStr = JSON.stringify(this.items);
+            // $(".alert").hide();
+            this.confirmation = true;
+
+            works = false;
 
             $.ajax({
-                type: 'POST',
                 url: 'form-processing.php',
-                data: myObjStr,
+                type: 'POST',
+                data: { items: myObjStr },
                 success: function (response) {
+                    works = true;
                     console.log(response);
+                    $(".modal-body").html("Items were successfully added");
+                },
+                error: function (response) {
+                    works = false;
+                    $(".modal-body").html("Sorry, try again. Items were not successfully added");
                 }
             });
+        },
+
+        redirect() {
+            if (works) {
+                location.href = "dashboard.php";
+            }
         }
     }
 });

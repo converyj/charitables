@@ -1,0 +1,619 @@
+/*--------------------------------------------------------------
+# Intro Section
+--------------------------------------------------------------*/
+
+#intro {
+ width: 100%;
+ position: relative;
+ background: url("../images/Header.png") center no-repeat;
+ background-size: cover;
+ padding-top: 10em;
+ padding-bottom: 49em;
+
+}
+
+
+#intro .intro-img {
+  width: 60%;
+  float: right;
+}
+
+#intro .intro-info {
+  width: 60%;
+  float: left;
+}
+
+#intro .intro-info h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+#intro .intro-info h2 span {
+  color: #74b5fc;
+  text-decoration: underline;
+}
+
+#intro .intro-info .btn-get-started,
+#intro .intro-info .btn-services {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 0 20px 20px 0;
+  color: #fff;
+}
+
+#intro .intro-info .btn-get-started {
+
+  background: rgba(	255, 106, 156, 0.8) !important;
+}
+
+#intro .intro-info .btn-get-started:hover {
+  background: rgba(	255, 106, 156, 1) !important;
+  border-color: rgba(	255, 106, 156, 1) !important;
+  color: #fff;
+}
+
+#intro .intro-info .btn-services  {
+  background: rgba(	255, 106, 156, 0.8) !important;
+}
+
+#intro .intro-info .btn-services:hover {
+  background: rgba(	255, 106, 156, 1) !important;
+  border-color: rgba(	255, 106, 156, 1) !important;
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  #testimonials .testimonial-item p {
+    width: 80%;
+  }
+
+  #intro {
+    padding-bottom: 20em;
+  }
+}
+
+@media (max-width: 991px) {
+
+  #intro {
+    padding: 140px 0 60px 0;
+  }
+
+  #intro .intro-img {
+    width: 80%;
+    float: none;
+    margin: 0 auto 25px auto;
+  }
+
+  #intro .intro-info {
+    width: 80%;
+    float: none;
+    margin: auto;
+    text-align: center;
+  }
+
+}
+
+
+
+@media (max-width: 767px) {
+  #intro .intro-info {
+    width: 100%;
+  }
+
+  #intro .intro-info h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+
+
+}
+
+@media (max-width: 574px) {
+  #intro {
+    padding: 100px 0 20px 0;
+  }
+}
+/* Intro Ends */
+
+.ca{
+  text-align: center;
+}
+
+.abc{
+  width:100%;
+}
+
+/*blue*/
+.mybuttonstyle{
+	border-color: rgba(110, 127, 255, 0.85) !important;
+	/*border: 0 !important;*/
+	background: rgba(110, 127, 255, 0.85) !important;
+}
+
+/*pink*/
+.mybuttonstyle2{
+	border: 0 !important;
+	background: rgba(	255, 106, 156, 0.85) !important;
+	color: #fff;
+}
+
+
+/*blue*/
+#blueBtn:hover, #blueBtn:active{
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
+}
+
+/*pink*/
+#pinkBtn:hover, #pinkBtn:active{
+  background: rgba(	255, 106, 156, 1) !important;
+  color: #fff;
+}
+#text3{
+  opacity: .5
+}
+#text2{
+  opacity: .5
+}
+
+
+#contact{
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  /* Style the container/contact section */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+}
+/*a{
+	color:#3f4653 !important;
+}*/
+
+/*
+.btn-primary:hover, .btn-primary:active{
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
+}*/
+
+/*pink
+.btn-primary2:hover, .btn-primary2:active{
+  background: rgba(	255, 106, 156, 1) !important;
+  color: #fff;
+}*/
+
+/*changed sign up hovers to blue*/
+/*.btn-outline-secondary:hover {
+	color: #fff !important;
+  background-color: #6c757d;
+  border-color: #6c757d;
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
+}*/
+
+/*to change*/
+/*.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+	box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}
+
+.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
+	color: rgba(110, 127, 255, 1) !important;
+	background-color: transparent;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-secondary.dropdown-toggle {
+	color: #fff;
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;*/
+/*}*/
+
+/*to change*/
+/*.btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-secondary.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}*/
+/*changed sign up hovers to blue*/
+@media (min-width: 376px)  {
+  .background-image{
+
+    /* The image used */
+    background-image: url("../images/charity.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Full height */
+    height: 500px;
+  }
+  }
+  @media (min-width: 768px) {
+    .background-image{
+
+      /* The image used */
+      background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+      /* Full height */
+      height: 1000px;
+      width: 100%;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+   }
+
+/* Animates division starts */
+.box {
+ text-align: center;
+ background: white;
+ margin: auto;
+ margin-top: 5%;
+ max-width: 90%;
+ padding: 20px 50px;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+
+
+button {
+ border:none;
+ background: red;
+ color: #f0f0f2;
+ border-radius: 5px;
+ padding: 5px;
+}
+
+button:hover {
+ border-right: 2px solid black;
+}
+
+.box h1 {
+ text-transform: uppercase;
+}
+
+.box p {
+ text-align: justify;
+}
+/* Animates division ends */
+
+/* button starts */
+#circleButton1{
+  width: 8em;
+   height: 8em;
+   margin-bottom: 2em;
+   /* margin-left: 50%; */
+   border-radius: 50%;
+   background-color: rgba(110, 127, 255, 0.85);
+   color: white;
+   text-align: center;
+}
+
+#circleButton2{
+   width: 8em;
+   height: 8em;
+   margin-bottom: 2em;
+
+   border-radius: 50%;
+   background-color: rgba(110, 127, 255, 0.85);
+   color: white;
+   text-align: center;
+}
+#circleButton3{
+  width: 8em;
+   height: 8em;
+   margin-bottom: 2em;
+
+
+   border-radius: 50%;
+   background-color: rgba(110, 127, 255, 0.85);
+   color: white;
+   text-align: center;
+}
+
+#text1, #text2, #text3{
+  font-family: 'Oswald'sans-serif;
+  font-size:24px;
+  text-align: center;
+}
+.circleButton:hover, .circleButton:focus, .circleButton:active {
+  /* background: #ff9b1a !important;
+  border-color: #ff9b1a !important; */
+  border-color: rgba(110, 127, 255, 1) !important;
+  background: rgba(110, 127, 255, 1) !important;	
+}
+
+#wdtw{
+  font-family: 'Oswald'sans-serif;
+  font-size:21px;
+  text-align: center;
+}
+/* button ends */
+@keyframes example {
+   0%   {border-left: 2px solid #ffffff;}
+   25%  {border-left: 3px solid #ffe6e6;}
+   50%  {border-left: 4px solid #ff8080;}
+   100% {border-left: 5px solid #ff0000;}
+}
+/* .background-image{
+
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+  /* Full height */
+  height: 500px;
+  width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+} */
+#blueBtn-secondary:hover{
+	color: white !important;
+/*  background-color: #6c757d;
+  border-color: #6c757d;*/
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
+}
+
+#blueBtn-secondary.disabled, #blueBtn-secondary:disabled {
+	color: rgba(110, 127, 255, 1) !important;
+	background-color: transparent;
+}
+
+#blueBtn-secondary:not(:disabled):not(.disabled):active, #blueBtn-secondary:not(:disabled):not(.disabled).active,
+.show > #blueBtn-secondary.dropdown-toggle {
+	color: #fff;
+	border-color: rgba(110, 127, 255, 1) !important;
+  	background: rgba(110, 127, 255, 1) !important;
+}
+
+
+
+/*doesnt work*/
+/*#hoverWhite{
+	color:red;
+}
+
+#hoverWhite:hover{
+	color:#fff;
+}*/
+
+/*SIGN UP
+.centerSignUpButtons{
+	width:15em;
+}
+
+.centerSignUpButtons2{
+	width:25em;
+}*/
+
+[type='radio'] {
+display: none;
+}
+
+
+
+
+/*Form Page*/
+/*#aBlack{
+	color:#3f4653;
+}
+
+#aBlack.active{
+	color:white !important;
+}*/
+
+.aBlack{
+	color:#3f4653;
+}
+
+.aBlack:hover{
+	text-decoration:none;
+	color:#3f4653;
+}
+
+.aWhite{
+	color:white;
+
+}
+
+.aWhite:hover{
+	text-decoration: none;
+	color:white;
+}
+
+.fa-angle-right{
+	color: rgba(110, 127, 255, 1);
+}
+
+.fa-bell{
+  color:rgba(0,0,0,.5)
+}
+/*#fullBorder{
+	border-top-left-radius: 0rem;
+	border-top-right-radius: .25rem;
+	border-bottom-right-radius: 0rem;
+  	border-bottom-left-radius: .25rem;
+}*/
+
+/*a:hover .noUnderline { text-decoration: none }
+
+a .noUnderline:hover { text-decoration: none }
+a:hover .noUnderline .btn { text-decoration: none }
+a .noUnderline .btn:hover { text-decoration: none }*/
+
+/*.card > .list-group:first-child .list-group-item:first-child {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+
+.card > .list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: 1rem !important;
+  border-bottom-left-radius: 1rem;
+}*/
+
+/*a{
+	color:#3f4653 !important;
+}
+
+a.active{
+	color:white;
+}*/
+
+.nav-link-pink {
+	color: white !important;
+	background-color:rgba(	255, 106, 156, 0.85) !important;
+	border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+.nav-link-pink.active {
+	color: white !important;
+	background-color:rgba(	255, 106, 156, 0.85) !important;
+	border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+/*.nav-link-pink.hover*/
+
+.nav-tabs-pink{
+	border-bottom: 2px solid rgba(	255, 106, 156, 0.85);
+	border-color: rgba(	255, 106, 156, 0.85);
+}
+
+
+.center{
+	text-align:center;
+}
+
+
+/*doesn't work*/
+.borderGrey{
+	border-color:#dee2e6;
+	border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.buttonC {
+	width: 4em;
+  	height: 4em;
+  	line-height: 4em; /* adjust line height to align vertically*/
+  	padding:0;
+  	border-radius: 50%;
+  }
+
+.buttonCA {
+	width: 6em;
+  	height: 6em;
+  	line-height: 6em; /* adjust line height to align vertically*/
+  	padding:0;
+  	border-radius: 50%;
+  	margin-right:1em;
+  	float:left;
+  	margin-top:0.5em;
+  }
+
+#widthPop{
+	width: 50%;
+}
+
+
+
+/*.nav{
+	width:100% !important;
+	text-align:center !important;
+	display:inline-block !important;
+
+}
+
+.nav-inline li{
+	display:inline-block;
+	float:none;
+}
+*/
+
+
+/* Dashboard Styles *************/
+
+.hideContent {
+		overflow: hidden;
+		height: 3.4em;
+}
+
+.showContent {
+		height: auto;
+}
+
+#Mybutton1 {
+		padding: 10px 0;
+		text-align: center;
+}
+
+#view-more {
+		clear: both;
+}
+/*
+.footer{
+	position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}*/

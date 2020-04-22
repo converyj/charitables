@@ -1,34 +1,72 @@
 <?php
-//receive values user submitted from form
-$item = $_POST['item'];
-$quantity = $_POST['quantity'];
 
-
-
-
+session_start();
 
 //perform database insert using form values;
-$dsn = "mysql:host=localhost;dbname=browne9_Charitables;charset=utf8mb4";
-$dbusername = "browne9_weedsite";
-$dbpassword = "g@5o4nFUJ7ha";
+include_once("../../charitables_dbconfig.php");
 
-$pdo = new PDO($dsn, $dbusername, $dbpassword);
+// object array 
+$items = $_POST['items'];
 
-$stmt = $pdo->prepare("INSERT INTO `Food` (`id`,`category`,`item`,`quantity`)
- VALUES (NULL,NULL, '$item', '$quantity'); ");
+// get company id of logged in user to insert into table 
+$id = $_SESSION['id'];
 
-//  $stmt2 = $pdo->prepare("INSERT INTO `Clothes` (`id`,`item`,`quantity`)
-//   VALUES (NULL, '$item', '$quantity'); ");
+// get the role of the logged in user 
+$role = $_SESSION['role'];
 
-$stmt->execute();
-// $stmt2->execute();
-$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$json = json_encode($results);
+// decode JSON array 
+$data = json_decode($items);
 
+$i = 0; 
+// loop through the array and insert into table - accessing it as objects 
+foreach ($data as $item) {
+    $category = $data[$i]->category;
+    $name = $data[$i]->name;
+    $quantity = $data[$i]->quantity;
+    $type = $data[$i]->type; 
 
+    $insert = inserts($pdo, $role, $id, $category, $name, $quantity, $type); 
 
-// header("Location: form.php");
-echo('{
+    $i++;
+}
+
+if ($insert) {
+    echo('{ 
     "success":"true"
   }');
-?>
+} else {
+    echo('{ 
+    "fail":"true"
+  }');
+}
+
+function inserts($pdo, $role, $id, $category, $name, $quantity, $type) {
+    if ($role == '1') { // Businesses
+        if ($type == 'f') {
+            $stmt = $pdo->prepare("INSERT INTO `Food` (`id`, `category`, `item`, `quantity`) VALUES ('$id', '$category', '$name', '$quantity'); ");
+        } else { // type is clothes
+            $stmt = $pdo->prepare("INSERT INTO `Clothes` (`id`, `category`, `item`, `quantity`) VALUES ('$id', '$category', '$name', '$quantity'); ");
+        }
+    } else { // Non-Profits 
+        if ($type == 'f') {
+            $stmt = $pdo->prepare("INSERT INTO `FoodNeeds` (`id`, `category`, `item`, `quantity`) VALUES ('$id', '$category', '$name', '$quantity'); ");
+        } else {
+            $stmt = $pdo->prepare("INSERT INTO `ClothesNeeds` (`id`, `category`, `item`, `quantity`) VALUES ('$id', '$category', '$name', '$quantity'); ");
+        }
+    }
+
+    $i = $stmt->execute();
+
+    if ($i == 1) {
+        $insert = true;
+    } else {
+        $insert = false;
+    }
+
+    return $insert; 
+}
+
+
+
+
+ 

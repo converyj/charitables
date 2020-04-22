@@ -5,7 +5,7 @@
     <title>Sign Up | Charitables</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media-queries.css" rel="stylesheet">
@@ -17,17 +17,17 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand h1" href="home.html">Charitables</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="home.php"><img src="images/logoLarge.png" alt="logo" height="40"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="donate.php">Support Us</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact Us</a>
+                    <a class="nav-link" href="home.php#contact">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
@@ -48,17 +48,25 @@
                 <div class="form-row mt-4">
                     <div class="btn-group btn-group-justified m-auto" data-toggle="buttons">
                         <label class="btn btn-outline-secondary active" id="blueBtn-secondary">
-                            <input type="radio" name="rdbRole" id="donor" value="1" checked>Donor
+                            <input type="radio" class="displayNone" name="rdbRole" id="donor" value="1" checked>Donor
                         </label>
                         <label class="btn btn-outline-secondary" id="blueBtn-secondary">
-                            <input type="radio" name="rdbRole" id="recipient" value="2">Recipient
+                            <input type="radio" class="displayNone" name="rdbRole" id="recipient" value="2">Recipient
                         </label>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" class="form-control" autofocus="autofocus" id="fname" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" class="form-control" id="lname" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="form-group col-12">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" autofocus="autofocus" id="email" placeholder="Enter Email" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email" required>
                     </div>
                     <div class="form-group col-12">
                         <label for="passwd">Password</label>
@@ -80,12 +88,12 @@
                     <input type="text" name="taxNumber" class="form-control" id="taxNum" placeholder="xxxxxxxxxx" required>
                 </div>
                 <div class="form-group">
-                    <label for="address">Address Line 1</label>
-                    <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street" required>
-                </div>
-                <div class="form-group">
                     <label for="contact">Contact Number</label>
                     <input type="text" name="contact" class="form-control" id="contact" placeholder="XXX-XXX-XXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" class="form-control" id="address" placeholder="123 Main Street" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">

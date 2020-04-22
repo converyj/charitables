@@ -1,5 +1,7 @@
 <?php
 //receive values user submitted from form
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
 $role = $_POST['rdbRole'];
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -14,14 +16,10 @@ $postal = $_POST['postalCode'];
 
 
 //perform database insert using form values;
-$dsn = "mysql:host=localhost;dbname=browne9_Charitables;charset=utf8mb4";
-$dbusername = "browne9_weedsite";
-$dbpassword = "g@5o4nFUJ7ha";
+include_once("../../charitables_dbconfig.php");
 
-$pdo = new PDO($dsn, $dbusername, $dbpassword);
-
-$stmt = $pdo->prepare("INSERT INTO `Users` (`id`,`role`,`email`, `password`, `organization_name`, `tax_id_number`, `address`, `contact`,`city`,`state`,`postal_code`)
- VALUES (NULL, '$role', '$email', '$password', '$orgName','$taxNO','$address','$contact','$city','$province','$postal'); ");
+$stmt = $pdo->prepare("INSERT INTO `Users` (`id`,`fname`,`lname`,`role`,`email`, `password`, `organization_name`, `tax_id_number`, `address`, `contact`,`city`,`state`,`postal_code`)
+ VALUES (NULL,'$fname','$lname', '$role', '$email', '$password', '$orgName','$taxNO','$address','$contact','$city','$province','$postal'); ");
 
 $stmt->execute();
 
