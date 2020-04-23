@@ -145,7 +145,7 @@ $stmt4->execute();
                                     ?>
                                     <div class="form-group col-4 col-md-3 col-lg-2">
                                         <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo ($row["id"]); ?>', categoryType = '<?php echo ($row["type"]); ?>'" data-toggle="modal" data-target="#<?php echo ($row["id"]); ?><?php echo ($row["type"]); ?>">
-                                            <img class="buttonC" src="images/foodImages<?php echo ($row["images"]); ?>" width="50" height="50" />
+                                            <img class="buttonC" src="images/foodImages/<?php echo ($row["images"]); ?>" width="50" height="50" />
                                         </button>
                                         <div>
                                             <label class="justify-content-center pt-1"><?php echo ($row["category"]); ?></label>
@@ -185,7 +185,7 @@ $stmt4->execute();
                                     ?>
                                     <div class="form-group col-4 col-md-3 col-lg-2">
                                         <button type="button" class="buttonC border-0" @click="categoryId = '<?php echo ($row3["id"]); ?>', categoryType = '<?php echo ($row3["type"]); ?>'" data-toggle="modal" data-target="#<?php echo ($row3["id"]); ?><?php echo ($row3["type"]); ?>">
-                                            <img class="buttonC" src="images/<?php echo ($row3["images"]); ?>" width="50" height="50" />
+                                            <img class="buttonC" src="images/all/<?php echo ($row3["images"]); ?>" width="50" height="50" />
                                         </button>
                                         <div>
                                             <label class="justify-content-center pt-1"><?php echo ($row3["category"]); ?></label>
