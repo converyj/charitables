@@ -17,6 +17,23 @@ else if (Notification.permission !== "denied") {
 
 function makeNotification() {
 	var notification = new Notification("New Match", {
-		icon: ""
+		icon: "../images/favicon.ico",
+		body: notification()
+	});
+}
+
+function notification() {
+	$.ajax({
+		url: "notification.php",
+		type: "POST",
+
+		success: function(response) {
+			works = true;
+			console.log(response);
+		},
+		error: function(response) {
+			works = false;
+			alert("Could not create notification");
+		}
 	});
 }
