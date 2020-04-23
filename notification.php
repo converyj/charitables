@@ -20,7 +20,7 @@ while ($row = $stmt->fetch()) {
 	}
 }
 
-return $message = $nonprofits . ' ' . 'matched with ' . $businesses . ' ' . 'businesses'
+return $message = $nonprofits . ' ' . 'matched with ' . $businesses . ' ' . 'businesses'dfsdfsdf
 
 if ($row) {
     echo('{ 
