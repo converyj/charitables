@@ -1,3 +1,4 @@
+console.log("in notification.js");
 if (!("Notification" in window)) {
 	alert("This browser does not support desktop notification");
 }

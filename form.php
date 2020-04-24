@@ -212,7 +212,7 @@ $stmt4->execute();
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <img class="buttonCA" src="images/<?php echo ($row4["images"]); ?>" width="100" height="100" />
+                                                <img class="buttonCA" src="images/all/<?php echo ($row4["images"]); ?>" width="100" height="100" />
                                                 <label for="item">Item</label>
                                                 <input type="text" name="item" id="widthPop" class="form-control" v-model="name" id="item" autofocus>
                                                 <label for="qty">Quantity</label>

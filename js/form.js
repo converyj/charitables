@@ -47,7 +47,7 @@ var vm = new Vue({
 					works = true;
 					console.log(response);
 					$(".modal-body").html("Items were successfully added");
-					$.get("notification.js");
+					setAlert();
 				},
 				error: function(response) {
 					works = false;
@@ -57,9 +57,38 @@ var vm = new Vue({
 		},
 
 		redirect() {
-			if (works) {
-				location.href = "dashboard.php";
-			}
+			// if (works) {
+			// 	location.href = "dashboard.php";
+			// }
 		}
 	}
 });
+
+function setAlert() {
+	console.log("make alert");
+
+	$.ajax({
+		url: "notification.php",
+		type: "POST",
+
+		success: function(response) {
+			works = true;
+			console.log(response);
+			makeAlert(response);
+		},
+		error: function(response) {
+			works = false;
+			alert("Could not create notification");
+		}
+	});
+}
+
+function makeAlert(matches) {
+	// loop through the array and insert into table - accessing it as objects
+	for (var key in matches) {
+		if (matches.hasOwnProperty(key)) {
+			// Printing Keys
+			console.log(matches[key]);
+		}
+	}
+}
